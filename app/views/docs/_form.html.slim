@@ -1,0 +1,24 @@
+= form_for doc, :html => { :class => 'form-horizontal' } do |f|
+	.row.well style="padding: 5px; "
+		.pull-left.mts
+			h4 style="margin: 0;"
+				= doc.doclink_ref_num + " : " + doc.title
+		.pull-right
+			= f.submit 'Save', :class => 'btn btn-primary'
+			= link_to 'Save As..', '#', :class => 'mls btn btn-primary'
+			= link_to 'Cancel', docs_index_path, :class => 'mls btn'
+		.clearfix
+	.row
+		.span5
+			= bs_tf f, :doclink_ref_num
+			= bs_tf f, :title
+			= bs_tf f, :global_coord
+			= bs_tf f, :parent
+			= bs_tf f, :condor_ref_num
+		.span5
+			= bs_tf f, :german_doc_num
+			= bs_tf f, :author
+			= bs_tf f, :chapter_name
+			= bs_tf f, :training_type
+			= bs_tf f, :comments
+		.clearfix

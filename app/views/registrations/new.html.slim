@@ -1,0 +1,49 @@
+.popup.special
+	.popup_top
+		
+		.popup_header
+			h2 Sign Up
+		
+		.popup_content.big
+			= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+				= devise_error_messages!
+
+				- if session['omniauth']
+					- provider = session['omniauth'][:provider]
+					- if provider == 'twitter'
+						- name = session['omniauth'][:info][:name]
+					- else
+						- fname = session['omniauth'][:info][:first_name]
+						- lname = session['omniauth'][:info][:last_name]
+					- image = session['omniauth'][:info][:image]
+					
+					div
+						.fr
+							h2.fl.fb.mrm= ( provider == 'twitter' ) ? (name) : (fname + ' ' + lname)
+							.fl= image_tag pull_normal_fb_pic(image), :style => "#{image_radius}"
+						.clearfix
+
+					= f.text_field :first_name, :value => ( provider == 'twitter' ) ? (name.split(' ')[0]) : (fname), :placeholder => 'FIRST NAME'
+					= f.text_field :last_name, :value => ( provider == 'twitter' ) ? (name.split(' ')[1]) : (lname), :placeholder => 'LAST NAME'
+					= f.email_field :email, :value => session['omniauth'][:info][:email], :placeholder => 'EMAIL'
+					= f.hidden_field :image, :value => pull_large_fb_pic(image)
+					
+
+
+				- else
+					= f.text_field :first_name, :placeholder => 'FIRST NAME'
+					= f.text_field :last_name, :placeholder => 'LAST NAME'
+					= f.email_field :email, :placeholder => 'EMAIL'
+
+				- if @user.password_required?
+					= f.password_field :password, :placeholder => 'PASSWORD'
+					= f.password_field :password_confirmation, :placeholder => 'CONFIRM PASSWORD'
+
+				= f.submit "Sign up", :class => 'btn btn-primary fr'
+				.clearfix
+
+				= render :partial => "devise/shared/links"
+
+	.popup_footer
+		
+			= render :partial => 'shared/authentication_links'

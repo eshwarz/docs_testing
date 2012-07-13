@@ -1,0 +1,14 @@
+- doc = @doc
+.row.mtm
+	= render :partial => 'form', :locals => { :doc => doc }
+.row
+	.tabbable
+		ul.nav.nav-tabs
+			li.active
+				a href="#tab_sq" data-toggle="tab" Versions
+			li
+				a href="#tab_test" data-toggle="tab" Requests
+			li
+				a href="#tab_sl" data-toggle="tab" Mapping
+			li
+				a href="#tab_ai" data-toggle="tab" History

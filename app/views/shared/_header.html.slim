@@ -1,0 +1,18 @@
+- user = current_user
+header
+	.navbar.navbar-fixed-top
+		.navbar-inner
+			.container.pr
+				= link_to 'PTQS Documents', root_path, :class => 'brand'
+				.nav-collapse.collapse
+					ul.nav.fr
+						- if user_signed_in?
+							li= user_image user, 'small', :width => '30', :style => 'padding-top: 8px;'
+							li= link_to 'Documents', home_path
+							li= link_to 'Reports', reports_path
+							li= link_to 'Sign Out', destroy_user_session_path
+						- else
+							li.active= link_to 'Sign In', new_user_session_path
+							li= link_to 'Sign Up', new_user_registration_path
+					.clearfix
+				.fr.welcome_name #{full_name user}

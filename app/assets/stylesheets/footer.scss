@@ -1,0 +1,9 @@
+@import 'mixins';
+
+footer {
+	@include tc;
+	@include absolute;
+	bottom: 0px;
+	width: 95%;
+//	background: #DDD;
+}

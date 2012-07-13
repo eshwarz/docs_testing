@@ -1,0 +1,13 @@
+@import 'mixins';
+
+.welcome_name {
+	@include absolute;
+	@include tiny;
+	color: #FFF;
+	right: 25px;
+	top: 5px;
+	z-index: 100;
+	height: 10px !important;
+	line-height: 10px !important;
+	@include db;
+}
