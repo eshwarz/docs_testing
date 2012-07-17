@@ -1,0 +1,5 @@
+$("#version_<%= @version.id %>").replaceWith("<%= escape_javascript( render :partial => 'versions/version', :locals => { :version => @version } ) %>")
+$('#docsModal').modal('hide')
+$('#flashes').replaceWith("<%= escape_javascript( render :partial => 'shared/notice' ) %>")
+hide_alerts()
+clearModalBox()

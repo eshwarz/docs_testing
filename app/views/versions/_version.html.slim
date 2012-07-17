@@ -1,0 +1,12 @@
+- doc = @doc
+tr id="version_#{version.id}"
+	td= version.group_num
+	td= version.version_number
+	td= version.comment
+	td= version.description_of_change
+	td= version.capa_number
+	td= version.revision_type
+	td
+		= link_to 'Edit', edit_version_path(version.id)+"?docs_id=#{doc.id}#docsModal", :remote => true, "data-toggle" => 'modal'
+		= " / "
+		= link_to 'Delete', version_path(version.id), :method => 'delete', :confirm => 'Are you sure?', :remote => true

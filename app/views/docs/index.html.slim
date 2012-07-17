@@ -6,18 +6,19 @@ p
 = will_paginate @docs
 table.table-striped.table-bordered.table-condensed
 	thead
-		td id
-		td Doclink
-		td Title
-		td Global coord
-		td Parent
-		td Condor
-		td German
-		td Author
-		td Chapter
-		td Training
-		td Comments
-		td width="80" Actions 
+		tr
+			th id
+			th Doclink
+			th Title
+			th Global coord
+			th Parent
+			th Condor
+			th German
+			th Author
+			th Chapter
+			th Training
+			th Comments
+			th width="80" Actions 
 
 	- @docs.each do |d| 
 		tr

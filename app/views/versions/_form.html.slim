@@ -1,0 +1,13 @@
+= form_for version, :html => { :class => 'form-horizontal' }, :remote => true do |f|
+	div class="modal-body" id="modal_body"
+		= hidden_field :version, :docs_id, :value => params[:docs_id]
+		= bs_tf f, :group_num
+		= bs_tf f, :version_number
+		= bs_tf f, :comment
+		= bs_tf f, :description_of_change
+		= bs_tf f, :capa_number
+		= bs_tf f, :revision_type
+
+	div class="modal-footer" id="modal_footer"
+		a href="#" class="btn" data-dismiss="modal" Close
+		= f.submit 'Save', :class => 'btn btn-primary'

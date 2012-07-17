@@ -7,7 +7,9 @@ body {
 	margin: 0px;
 //	padding: 0px;
 }
-
+.content {
+	min-height: 550px;
+}
 .gray_bg {
 	background: #CDDEED;
 }
@@ -32,6 +34,9 @@ ul {
 }
 .clearfix {
 	@include clearfix;
+}
+.no_pad {
+	@include p(0px !important)
 }
 //.error, .alert {
 //	@include ma;

@@ -11,15 +11,16 @@ class DocsController < ApplicationController
 	def create
 		if params and params[:docs]
 			Docs.create params[:docs]
-	  	end
-	  	redirect_to docs_index_path
+  	end
+  	redirect_to docs_index_path
 	end
 
 	def reports
 	end
 
 	def edit
-		  @doc = Docs.find(params[:id])
+	  @doc = Docs.find(params[:id])
+	  @versions = Version.where(:docs_id => @doc.id).paginate(:page => params[:page], :per_page => 10)
 	end
 
 	def update

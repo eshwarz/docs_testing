@@ -1,5 +1,14 @@
 @import 'mixins';
 
+.modal {
+	form {
+		@include m(0px);
+		input[type="text"], input[type="password"] {
+			width: 330px;
+		}
+	}
+}
+
 input, select, textarea {
 	@include default_font;
 }

@@ -1,6 +1,30 @@
-- flash.each do |name, msg|
-	- unless msg.blank? 
-		.container.mtm.mbm
-			div class="#{name}"
-				button.close data-dismiss="alert" type="button"
-				= msg
+#flashes
+	- flash.each do |name, msg|
+		- if !msg.blank? 
+			.container
+				- if name == :error
+					div class='alert alert-error' style="margin-left: -30px; padding-right: 15px;"
+						.container
+							button.close data-dismiss="alert" type="button"
+							= msg
+				- if name == :success or name == :notice
+					div class='alert alert-success' style="margin-left: -30px; padding-right: 15px;"
+						.container
+							button.close data-dismiss="alert" type="button"
+							= msg
+				- if name == :info
+					div class='alert alert-info' style="margin-left: -30px; padding-right: 15px;"
+						.container
+							button.close data-dismiss="alert" type="button"
+							= msg
+				- if name == :warning
+					div class='alert alert-block' style="margin-left: -30px; padding-right: 15px;"
+						.container
+							button.close data-dismiss="alert" type="button"
+							= msg
+							
+	- flash[:warning] = ""
+	- flash[:error] = ""
+	- flash[:success] = ""
+	- flash[:notice] = ""
+	- flash[:info] = ""

@@ -18,4 +18,7 @@
 #
 
 class Docs < ActiveRecord::Base
+	has_many :versions
+	has_many :requests
+	has_many :mappings
 end

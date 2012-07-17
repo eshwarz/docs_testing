@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120712121151) do
+ActiveRecord::Schema.define(:version => 20120716131628) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -76,6 +76,20 @@ ActiveRecord::Schema.define(:version => 20120712121151) do
     t.datetime "updated_at",      :null => false
   end
 
+  create_table "mappings", :force => true do |t|
+    t.integer  "docs_id"
+    t.string   "us_cfrs"
+    t.string   "japan"
+    t.string   "pic_s"
+    t.string   "eudralex"
+    t.string   "iso"
+    t.string   "ich"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "mappings", ["docs_id"], :name => "index_mappings_on_docs_id"
+
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"
     t.text     "about"
@@ -84,6 +98,34 @@ ActiveRecord::Schema.define(:version => 20120712121151) do
   end
 
   add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
+
+  create_table "requests", :force => true do |t|
+    t.text     "requested_by"
+    t.date     "requested_date"
+    t.string   "team_sponsor"
+    t.string   "request_type"
+    t.integer  "proposed_version_number"
+    t.text     "justification"
+    t.text     "description"
+    t.text     "sites"
+    t.string   "timeline"
+    t.text     "team"
+    t.string   "commitment"
+    t.string   "commitment_details"
+    t.text     "superseded_docs"
+    t.string   "training_impact"
+    t.string   "training_strategy"
+    t.date     "pqs_bmt_date"
+    t.text     "pqs_bmt_decision_rationale"
+    t.date     "pqs_ct_date"
+    t.text     "pqs_ct_decision_rationale"
+    t.date     "request_closed_date"
+    t.string   "comments"
+    t.string   "text"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.integer  "docs_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -105,5 +147,19 @@ ActiveRecord::Schema.define(:version => 20120712121151) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "versions", :force => true do |t|
+    t.integer  "docs_id"
+    t.string   "group_num"
+    t.integer  "version_number"
+    t.text     "comment"
+    t.text     "description_of_change"
+    t.integer  "capa_number"
+    t.string   "revision_type"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
+
+  add_index "versions", ["docs_id"], :name => "index_versions_on_docs_id"
 
 end

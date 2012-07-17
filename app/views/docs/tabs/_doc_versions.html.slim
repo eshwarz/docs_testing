@@ -1,0 +1,20 @@
+a class="btn btn-primary fr" data-toggle="modal" href="#docsModal" id="new_version" doc-id="#{doc.id}" New Version
+.clearfix
+
+= will_paginate @versions
+
+table.table-striped.table-bordered.table-condensed width="100%"
+	thead
+		tr
+			th Group Num
+			th Version Num
+			th Comment
+			th Description of Change
+			th Capa Num
+			th Revision Type
+			th Actions
+	tbody#all_versions
+		- @versions.each do |version|
+			= render :partial => 'versions/version', :locals => { :version => version }
+
+= will_paginate @versions

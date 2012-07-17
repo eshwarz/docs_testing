@@ -1,0 +1,2 @@
+$('#modal_header').html('New Version')
+$('#modal_content').html("<%= escape_javascript( render :partial => 'versions/form', :locals => { :version => @version } ) %>")

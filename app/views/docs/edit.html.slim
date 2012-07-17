@@ -5,10 +5,18 @@
 	.tabbable
 		ul.nav.nav-tabs
 			li.active
-				a href="#tab_sq" data-toggle="tab" Versions
+				a href="#versions" data-toggle="tab" Versions
 			li
-				a href="#tab_test" data-toggle="tab" Requests
+				a href="#requests" data-toggle="tab" Requests
 			li
-				a href="#tab_sl" data-toggle="tab" Mapping
+				a href="#mappings" data-toggle="tab" Mapping
 			li
-				a href="#tab_ai" data-toggle="tab" History
+				a href="#history" data-toggle="tab" History
+
+	.tab-content
+		#versions.tab-pane.active
+			= render :partial => 'docs/tabs/doc_versions', :locals => { :doc => doc }
+
+		#requests.tab-pane
+		#mappings.tab-pane
+		#history.tab-pane

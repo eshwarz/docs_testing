@@ -1,0 +1,3 @@
+$('#all_versions').append("<%= escape_javascript( render :partial => 'versions/version', :locals => { :version => @version } ) %>")
+$('#docsModal').modal('hide')
+clearModalBox()
