@@ -7,6 +7,10 @@
 		= bs_tf f, :description_of_change
 		= bs_tf f, :capa_number
 		= bs_tf f, :revision_type
+		div
+			= link_to 'Issues...', '#', :class => 'btn btn-primary fr mls'
+			= link_to 'Dates...', '#', :class => 'btn btn-primary fr'
+			.clearfix
 
 	div class="modal-footer" id="modal_footer"
 		a href="#" class="btn" data-dismiss="modal" Close
