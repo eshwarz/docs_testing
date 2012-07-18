@@ -9,8 +9,11 @@
 		select {
 			width: 340px;
 		}
-		.mini_field {
+		input.mini_field, textarea.mini_field {
 			width: 100px !important;
+		}
+		select.mini_field {
+			width: 110px !important;
 		}
 	}
 }

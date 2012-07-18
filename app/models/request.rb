@@ -1,5 +1,28 @@
 class Request < ActiveRecord::Base
 	belongs_to :docs
+
+	def self.request_types
+		['New', 'Revised']
+	end
+
+	def self.timelines
+		['D', 'E', 'F', 'G', 'H', 'Special']
+	end
+
+	def self.commitments
+		['Yes', 'No']
+	end
+
+	def self.training_impacts
+		['R&U only', 'Update', 'Create New']
+	end
+
+	def self.training_strategys
+		['Read and Understand', 'WBT', 'ILT']
+	end
+
+	
+
 end
 # == Schema Information
 #

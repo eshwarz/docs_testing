@@ -16,6 +16,8 @@ body {
 	@include shadow(0px 0px 5px #AAA);
 }
 
-.modal_large {
-	margin: -250px 0 0 -470px
+// large modal box
+.modal.large {
+	margin: -250px 0 0 -470px;
+	width: 940px;
 }

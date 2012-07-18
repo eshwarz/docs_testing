@@ -77,9 +77,9 @@ module ApplicationHelper
 		form_label = form.label field, :class =>  'control-label'
 
 		as_field = form.text_field(field, opts) if opts[:as].nil?
-		as_field = form.select(field, opts[:collection], opts.except(:as, :collection)) if opts[:as] == :select
+		as_field = form.select(field, opts[:collection], { :prompt => opts[:prompt] }, opts.except(:as, :collection, :prompt)) if opts[:as] == :select
 		
-		form_field = content_tag( 'div', as_field, :class => 'controls')
+		form_field = content_tag( 'div', as_field, :class => "controls" )
 		get_row = form_label + form_field
 		content_tag('div', get_row, :class => 'control-group')
 	end
