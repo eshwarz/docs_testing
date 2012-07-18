@@ -1,0 +1,2 @@
+$('#modal_header').html('New Request')
+$('#modal_content').html("<%= escape_javascript( render :partial => 'requests/form', :locals => { :request => @request } ) %>")

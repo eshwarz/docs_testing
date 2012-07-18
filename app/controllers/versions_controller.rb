@@ -19,6 +19,7 @@ class VersionsController < ApplicationController
 	def create
 		if params and params[:version]
 			@version = Version.create params[:version]
+			@doc = @version.docs
       if @version
       	flash[:notice] = "Version created !"
       else

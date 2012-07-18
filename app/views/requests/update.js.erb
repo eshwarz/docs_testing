@@ -1,0 +1,5 @@
+$("#request_<%= @request.id %>").replaceWith("<%= escape_javascript( render :partial => 'requests/request', :locals => { :request => @request } ) %>")
+$('#docsModal').modal('hide')
+$('#flashes').replaceWith("<%= escape_javascript( render :partial => 'shared/notice' ) %>")
+hide_alerts()
+clearModalBox()

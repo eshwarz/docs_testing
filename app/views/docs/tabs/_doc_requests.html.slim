@@ -1,0 +1,28 @@
+a class="btn btn-primary fr" data-toggle="modal" href="#docsModal" id="new_request" doc-id="#{doc.id}" New Request
+.clearfix
+
+= will_paginate @requests
+
+/ requested_by
+/ 	td= request.requested_date
+/ 	td= request.team_sponsor
+/ 	td= request.request_type
+/ 	td= request.proposed_version_number
+/ 	td= request.justification
+/ 	td= request.description
+
+table.table-striped.table-bordered.table-condensed width="100%"
+	thead
+		tr
+			th Requested By
+			th Requested Date
+			th Team Sponsor
+			th Request Type
+			th Proposed Version Num
+			th Justification
+			th Description
+	tbody#all_requests
+		- @requests.each do |request|
+			= render :partial => 'requests/request', :locals => { :request => request }
+
+= will_paginate @requests

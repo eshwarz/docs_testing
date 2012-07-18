@@ -35,3 +35,41 @@ if Version.count == 0
 		end
 	end
 end
+
+
+if Request.count == 0
+	request_types = [ 'New', 'Revised' ]
+	check = [ 'yes', 'No' ]
+	t_impact = [ 'R&U only', 'Update', 'Create New' ]
+	t_strategy = [ 'Read and Understand', 'WBT', 'ILT' ]
+	p_timeline = [ 'D', 'E', 'F', 'G', 'H', 'Special' ]
+	Docs.all.each_with_index do |doc, index|
+		rand(15).times do |i|
+			j = i+1
+			doc.requests.create(
+													:requested_by => "Requested by #{j}",
+													:requested_date => "#{rand(31)+1}-#{rand(12)+1}-#{rand(12)+2000}",
+													:docs_id => doc.id,
+													:team_sponsor => "Team sponsor #{j}",
+													:request_type => request_types[rand(2)],
+													:proposed_version_number => rand(999999),
+													:justification => "Justification goes here #{j}",
+													:description => "Description goes here #{j}",
+													:sites => "Sites #{rand(127)+1}",
+													:timeline => p_timeline[rand(6)],
+													:team => "member #{rand(50+1)}, member #{rand(50+1)}, member #{rand(50+1)}",
+													:commitment => check[rand(2)],
+													:commitment_details => "Commitment details",
+													:superseded_docs => "doc #{rand(127)+1}, doc #{rand(127)+1}, doc #{rand(127)+1}",
+													:training_impact => t_impact[rand(3)],
+													:training_strategy => t_strategy[rand(3)],
+													:pqs_bmt_date => "#{rand(31)+1}-#{rand(12)+1}-#{rand(12)+2000}",
+													:pqs_bmt_decision_rationale => "PQS CT Decision rationale",
+													:pqs_ct_date => "#{rand(31)+1}-#{rand(12)+1}-#{rand(12)+2000}",
+													:pqs_ct_decision_rationale => "PQS CT Decision rationale",
+													:request_closed_date => "#{rand(31)+1}-#{rand(12)+1}-#{rand(12)+2000}",
+													:comments => "This is num #{j} comment for doc #{index+1}"
+													)
+		end
+	end
+end

@@ -1,0 +1,13 @@
+- doc = @doc
+tr id="request_#{request.id}"
+	td= request.requested_by
+	td= request.requested_date
+	td= request.team_sponsor
+	td= request.request_type
+	td= request.proposed_version_number
+	td= request.justification
+	td= request.description
+	td
+		= link_to 'Edit', edit_request_path(request.id)+"?docs_id=#{doc.id}#docsModal", :remote => true, "data-toggle" => 'modal'
+		= " / "
+		= link_to 'Delete', request_path(request.id), :method => 'delete', :confirm => 'Are you sure?', :remote => true

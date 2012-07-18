@@ -21,6 +21,7 @@ class DocsController < ApplicationController
 	def edit
 	  @doc = Docs.find(params[:id])
 	  @versions = Version.where(:docs_id => @doc.id).paginate(:page => params[:page], :per_page => 10)
+	  @requests = Request.where(:docs_id => @doc.id).paginate(:page => params[:page], :per_page => 10)
 	end
 
 	def update

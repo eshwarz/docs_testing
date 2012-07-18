@@ -15,6 +15,7 @@ Ptqs::Application.routes.draw do
   resources :authentications
   resources :docs
   resources :versions
+  resources :requests
   
   #    :action => 'destroy', :as => 'delete'
   # end
