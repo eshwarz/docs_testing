@@ -30,7 +30,7 @@ if Version.count == 0
 	Docs.all.each_with_index do |doc, index|
 		rand(20).times do |i|
 			j = i+1
-			doc.versions.create( :docs_id => doc.id, :group_num => rand(400), :version_number => j, :comment => "this is test comment for doc no #{index+1}", :description_of_change => "Description for doc no #{index+1}", :capa_number => rand(999999), :revision_type => 'random' )
+			doc.versions.create( :docs_id => doc.id, :group_num => rand(400), :version_number => j, :lia_status => 'progress', :comment => "this is test comment for doc no #{index+1}", :description_of_change => "Description for doc no #{index+1}", :capa_number => rand(999999), :revision_type => 'random' )
 			puts "Docs seeds for #{index+1}"
 		end
 	end

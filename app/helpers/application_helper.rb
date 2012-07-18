@@ -71,10 +71,15 @@ module ApplicationHelper
 		image_tag "http://placehold.it/#{width}x#{height}"
 	end
 
+	# bootstrap forms field
 
-	def bs_tf form, field
+	def bs_f form, field, opts = {}
 		form_label = form.label field, :class =>  'control-label'
-		form_field = content_tag( 'div', form.text_field(field), :class => 'controls')
+
+		as_field = form.text_field(field, opts) if opts[:as].nil?
+		as_field = form.select(field, opts[:collection], opts.except(:as, :collection)) if opts[:as] == :select
+		
+		form_field = content_tag( 'div', as_field, :class => 'controls')
 		get_row = form_label + form_field
 		content_tag('div', get_row, :class => 'control-group')
 	end

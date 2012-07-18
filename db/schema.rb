@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120718112037) do
+ActiveRecord::Schema.define(:version => 20120718155559) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -157,6 +157,7 @@ ActiveRecord::Schema.define(:version => 20120718112037) do
     t.string   "revision_type"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
+    t.string   "lia_status"
   end
 
   add_index "versions", ["docs_id"], :name => "index_versions_on_docs_id"

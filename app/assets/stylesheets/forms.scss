@@ -6,6 +6,12 @@
 		input[type="text"], input[type="password"] {
 			width: 330px;
 		}
+		select {
+			width: 340px;
+		}
+		.mini_field {
+			width: 100px !important;
+		}
 	}
 }
 

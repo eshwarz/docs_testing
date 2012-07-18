@@ -2,27 +2,31 @@
 	div class="modal-body" id="modal_body"
 		= hidden_field :request, :docs_id, :value => params[:docs_id]
 
-		= bs_tf f, :requested_by
-		= bs_tf f, :requested_date
-		= bs_tf f, :team_sponsor
-		= bs_tf f, :request_type
-		= bs_tf f, :proposed_version_number
-		= bs_tf f, :justification
-		= bs_tf f, :description
-		= bs_tf f, :sites
-		= bs_tf f, :timeline
-		= bs_tf f, :team
-		= bs_tf f, :commitment
-		= bs_tf f, :commitment_details
-		= bs_tf f, :superseded_docs
-		= bs_tf f, :training_impact
-		= bs_tf f, :training_strategy
-		= bs_tf f, :pqs_bmt_date
-		= bs_tf f, :pqs_bmt_decision_rationale
-		= bs_tf f, :pqs_ct_date
-		= bs_tf f, :pqs_ct_decision_rationale
-		= bs_tf f, :request_closed_date
-		= bs_tf f, :comments
+		.row
+			.span3
+				= bs_f f, :requested_by, :class => 'mini_field'
+				= bs_f f, :requested_date, :class => 'mini_field'
+				= bs_f f, :team_sponsor, :class => 'mini_field'
+				= bs_f f, :request_type, :class => 'mini_field'
+				= bs_f f, :proposed_version_number, :class => 'mini_field'
+				= bs_f f, :justification, :class => 'mini_field'
+				= bs_f f, :description, :class => 'mini_field'
+			.span3
+				= bs_f f, :sites, :class => 'mini_field'
+				= bs_f f, :timeline, :class => 'mini_field'
+				= bs_f f, :team, :class => 'mini_field'
+				= bs_f f, :commitment, :class => 'mini_field'
+				= bs_f f, :commitment_details, :class => 'mini_field'
+				= bs_f f, :superseded_docs, :class => 'mini_field'
+				= bs_f f, :training_impact, :class => 'mini_field'
+			.span3
+				= bs_f f, :training_strategy, :class => 'mini_field'
+				= bs_f f, :pqs_bmt_date, :class => 'mini_field'
+				= bs_f f, :pqs_bmt_decision_rationale, :class => 'mini_field'
+				= bs_f f, :pqs_ct_date, :class => 'mini_field'
+				= bs_f f, :pqs_ct_decision_rationale, :class => 'mini_field'
+				= bs_f f, :request_closed_date, :class => 'mini_field'
+				= bs_f f, :comments, :class => 'mini_field'
 
 
 	div class="modal-footer" id="modal_footer"
