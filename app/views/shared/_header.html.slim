@@ -8,7 +8,7 @@ header
 					ul.nav.fr
 						- if user_signed_in?
 							li= user_image user, 'small', :width => '30', :style => 'padding-top: 8px;'
-							li= link_to 'Documents', home_path
+							li= link_to 'Documents', root_path
 							li= link_to 'Reports', reports_path
 							li= link_to 'Sign Out', destroy_user_session_path
 						- else
