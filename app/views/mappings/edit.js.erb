@@ -1,0 +1,2 @@
+$('#modal_header').html('Edit Mapping')
+$('#modal_content').html("<%= escape_javascript( render :partial => 'mappings/form', :locals => { :mapping => @mapping } ) %>")

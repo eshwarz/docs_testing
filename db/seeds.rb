@@ -31,7 +31,7 @@ if Version.count == 0
 		rand(20).times do |i|
 			j = i+1
 			doc.versions.create( :docs_id => doc.id, :group_num => rand(400), :version_number => j, :lia_status => 'progress', :comment => "this is test comment for doc no #{index+1}", :description_of_change => "Description for doc no #{index+1}", :capa_number => rand(999999), :revision_type => 'random' )
-			puts "Docs seeds for #{index+1}"
+			puts "Doc versions seeds for #{index+1}"
 		end
 	end
 end
@@ -70,6 +70,25 @@ if Request.count == 0
 													:request_closed_date => "#{rand(31)+1}-#{rand(12)+1}-#{rand(12)+2000}",
 													:comments => "This is num #{j} comment for doc #{index+1}"
 													)
+			puts "Doc requests seeds for #{index+1}"
+
+		end
+	end
+end
+
+if Mapping.count == 0
+	Docs.all.each_with_index do |doc, index|
+		rand(5).times do |i|
+			j = i+1
+			doc.mappings.create( 
+													:us_cfrs => "cfrs #{j}",
+													:japan => "japan #{j}",
+													:pic_s => "pic s #{j}",
+													:eudralex => "eudralex #{j}",
+													:iso => "iso #{j}",
+													:ich => "ich #{j}"
+												 )
+			puts "Doc mappings seeds for #{index+1}"
 		end
 	end
 end

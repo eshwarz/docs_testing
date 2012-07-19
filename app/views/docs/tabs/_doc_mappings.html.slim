@@ -1,0 +1,21 @@
+a class="btn btn-primary fr" data-toggle="modal" href="#docsModal" id="new_mapping" doc-id="#{doc.id}" New Mapping
+.clearfix
+
+= will_paginate @mappings
+
+table.table-striped.table-bordered.table-condensed width="100%"
+	thead
+		tr
+			th US CFRS
+			th Japan
+			th PIC/S
+			th EudraLex
+			th ISO
+			th ICH
+			th Actions
+
+	tbody#all_mappings
+		- @mappings.each do |mapping|
+			= render :partial => 'mappings/mapping', :locals => { :mapping => mapping }
+
+= will_paginate @mappings

@@ -1,0 +1,12 @@
+- doc = @doc
+tr id="mapping_#{mapping.id}"
+	td= mapping.us_cfrs
+	td= mapping.japan
+	td= mapping.pic_s
+	td= mapping.eudralex
+	td= mapping.iso
+	td= mapping.ich
+	td
+		= link_to 'Edit', edit_mapping_path(mapping.id)+"?docs_id=#{doc.id}#docsModal", :remote => true, "data-toggle" => 'modal'
+		= " / "
+		= link_to 'Delete', mapping_path(mapping.id), :method => 'delete', :confirm => 'Are you sure?', :remote => true

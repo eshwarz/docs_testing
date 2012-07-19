@@ -1,0 +1,5 @@
+$("#mapping_<%= @mapping.id %>").replaceWith("<%= escape_javascript( render :partial => 'mappings/mapping', :locals => { :mapping => @mapping } ) %>")
+$('#docsModal').modal('hide')
+$('#flashes').replaceWith("<%= escape_javascript( render :partial => 'shared/notice' ) %>")
+hide_alerts()
+clearModalBox()
