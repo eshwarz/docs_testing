@@ -1,7 +1,10 @@
 class Version < ActiveRecord::Base
 
 	validates :docs_id, :presence => true
-	
+
+	# relations
+	has_many :timelines
+	has_many :issues
 	belongs_to :docs
 
 	def self.group_nums

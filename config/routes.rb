@@ -11,22 +11,20 @@ Ptqs::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => 'registrations' } do
     get '/users/sign_out' => 'devise/sessions#destroy' # added this becaause of sign_out bug.
   end
-  
+
   resources :authentications
   resources :docs
   resources :versions
   resources :requests
   resources :mappings
-  
-  #    :action => 'destroy', :as => 'delete'
-  # end
-
+  resources :issues
+  resources :timelines
 
   controller :home do
     match '/reports', :action => 'reports', :as => 'reports'
     match '/home', :action => 'index', :as => 'home'
   end
-  
+
   controller :devise_checker do
     match '/check_devise', :action => 'check_devise', :as => 'check_devise'
   end

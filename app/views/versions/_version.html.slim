@@ -9,9 +9,10 @@ tr id="version_#{version.id}"
 	td= version.revision_type
 	td
 		div
-			= link_to 'Issues...', '#', :class => ''
+
+			= link_to 'Issues...', '#', :class => 'view_issues', "data-toggle" => "modal", :href => "#docsModal", "version-id" =>"#{doc.id}"
 			= " / "
-			= link_to 'Dates...', '#', :class => ''
+			= link_to 'Dates...', '#', :class => 'view_timelines', "data-toggle" => "modal", :href => "#docsModal", "version-id" =>"#{doc.id}"
 			.clearfix
 	td
 		= link_to 'Edit', edit_version_path(version.id)+"?docs_id=#{doc.id}#docsModal", :remote => true, "data-toggle" => 'modal'
