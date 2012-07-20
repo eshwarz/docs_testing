@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120719161532) do
+ActiveRecord::Schema.define(:version => 20120720115135) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -78,11 +78,11 @@ ActiveRecord::Schema.define(:version => 20120719161532) do
 
   create_table "issues", :force => true do |t|
     t.string   "issue"
-    t.string   "type"
     t.text     "comment"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "version_id"
+    t.string   "issue_type"
   end
 
   create_table "mappings", :force => true do |t|
@@ -136,12 +136,12 @@ ActiveRecord::Schema.define(:version => 20120719161532) do
   end
 
   create_table "timelines", :force => true do |t|
-    t.string   "type"
     t.date     "date"
     t.text     "comment"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.integer  "version_id"
+    t.string   "timeline_type"
   end
 
   create_table "users", :force => true do |t|

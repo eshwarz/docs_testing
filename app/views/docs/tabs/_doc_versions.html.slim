@@ -1,7 +1,8 @@
-a class="btn btn-primary fr" data-toggle="modal" href="#docsModal" id="new_version" doc-id="#{doc.id}" New Version
+div
+	.fl= will_paginate @versions
+	a class="btn btn-primary fr pagination_link" data-toggle="modal" href="#docsModal" id="new_version" doc-id="#{doc.id}" New Version
 .clearfix
 
-= will_paginate @versions
 
 table.table-striped.table-bordered.table-condensed width="100%"
 	thead

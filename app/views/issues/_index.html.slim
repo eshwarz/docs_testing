@@ -1,0 +1,27 @@
+- version = @version
+
+div class="modal-body" id="modal_body" style="padding-top: 0px;"
+
+	#issue_form.hide
+
+	div
+		.fl= will_paginate @issues
+		a class="btn btn-primary fr pagination_link" href="#docsModal" id="new_issue" version-id="#{version.id}" New Issue
+	.clearfix
+
+
+	table.table-striped.table-bordered.table-condensed width="100%"
+		thead
+			tr
+				th Type
+				th Issue
+				th Comment
+				th Actions
+		tbody#all_issues
+			- @issues.each do |issue|
+				= render :partial => 'issue', :locals => { :issue => issue }
+
+	= will_paginate @issues
+
+div class="modal-footer" id="modal_footer"
+	a href="#" class="btn" data-dismiss="modal" Close

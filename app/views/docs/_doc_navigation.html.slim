@@ -1,0 +1,9 @@
+.row
+	
+	- if doc.id != 1
+		= link_to raw("<span class='icon icon-chevron-left'></span>"), edit_doc_path(doc.id-1), :rel => "tooltip", :title => "Previous Document", :class => "bs_tooltip_right navigation_button fl"
+
+	- if doc.id != Docs.last.id
+		= link_to raw("<span class='icon icon-chevron-right'></span>"), edit_doc_path(doc.id+1), :rel => "tooltip", :title => "Next Document", :class => "bs_tooltip_left navigation_button fr"
+
+	.clearfix

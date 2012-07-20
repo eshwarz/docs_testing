@@ -1,0 +1,2 @@
+$('#modal_header').html('View Issues')
+$('#modal_content').html("<%= escape_javascript( render :partial => 'issues/index', :locals => { :issues => @issues } ) %>")

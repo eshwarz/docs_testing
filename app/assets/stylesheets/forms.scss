@@ -4,16 +4,26 @@
 	form {
 		@include m(0px);
 		input[type="text"], input[type="password"] {
-			width: 330px;
+			width: 320px;
 		}
 		select {
-			width: 340px;
+			width: 330px;
 		}
 		input.mini_field, textarea.mini_field {
 			width: 100px !important;
 		}
 		select.mini_field {
 			width: 110px !important;
+		}
+	}
+	.well {
+		form {
+			input[type="text"], input[type="password"] {
+				width: 307px;
+			}
+			select {
+				width: 317px;
+			}
 		}
 	}
 }

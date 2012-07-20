@@ -1,4 +1,7 @@
 - doc = @doc
+
+= render :partial => 'doc_navigation', :locals => { :doc => doc }
+
 .row.mtm
 	= render :partial => 'form', :locals => { :doc => doc }
 .row

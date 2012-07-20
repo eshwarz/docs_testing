@@ -1,7 +1,8 @@
-a class="btn btn-primary fr" data-toggle="modal" size="large" href="#docsModal" id="new_request" doc-id="#{doc.id}" New Request
-.clearfix
+div
+	.fl= will_paginate @requests
+	a class="btn btn-primary fr pagination_link" data-toggle="modal" size="large" href="#docsModal" id="new_request" doc-id="#{doc.id}" New Request
+	.clearfix
 
-= will_paginate @requests
 
 table.table-striped.table-bordered.table-condensed width="100%"
 	thead

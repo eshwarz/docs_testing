@@ -1,7 +1,8 @@
-a class="btn btn-primary fr" data-toggle="modal" href="#docsModal" id="new_mapping" doc-id="#{doc.id}" New Mapping
-.clearfix
+div
+	.fl= will_paginate @mappings
+	a class="btn btn-primary fr pagination_link" data-toggle="modal" href="#docsModal" id="new_mapping" doc-id="#{doc.id}" New Mapping
+	.clearfix
 
-= will_paginate @mappings
 
 table.table-striped.table-bordered.table-condensed width="100%"
 	thead

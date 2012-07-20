@@ -92,3 +92,45 @@ if Mapping.count == 0
 		end
 	end
 end
+
+if Issue.count == 0
+	issue_types = [ 'Bio OU', 'SM OU', 'CMO OU', 'PTD OU', 'Other OU' ]
+	num = 20
+	Version.all.each_with_index do |version, index|
+		rand(15).times do |i|
+			j = i+1
+			version.issues.create( :issue_type => issue_types[rand(5)], :issue => "This is issue #{j}", :comment => "This is test comment #{j}" )
+			puts "Version issues seeds for #{index+1}"
+		end
+		if index > num
+			break
+		end
+	end
+end
+
+if Timeline.count == 0
+	num = 20
+
+	timeline_types = [
+										'Final draft to PQS BMT',
+										'Tech review period',
+										'out for stakeholder review',
+										'stakeholder review ends',
+										'author adjudication complete',
+										'to PQS CT for OU review',
+										'OU review complete',
+										'OU review mtg',
+										'approval',
+										'effective and LIA due'
+									]
+	Version.all.each_with_index do |version, index|
+		rand(15).times do |i|
+			j = i+1
+			version.timelines.create( :timeline_type => timeline_types[rand(10)], :date => "#{rand(31)+1}-#{rand(12)+1}-#{rand(12)+2000}", :comment => "This is test comment #{j}" )
+			puts "Version timelines seeds for #{index+1}"
+		end
+		if index > num
+			break
+		end
+	end
+end

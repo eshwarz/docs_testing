@@ -1,0 +1,8 @@
+tr id="issue_#{issue.id}"
+	td= issue.issue_type
+	td= issue.issue
+	td= issue.comment
+	td
+		= link_to 'Edit', edit_issue_path(issue.id)+"?version_id=#{@version.id}", :remote => true
+		= " / "
+		= link_to 'Delete', issue_path(issue.id), :method => 'delete', :confirm => 'Are you sure?', :remote => true
