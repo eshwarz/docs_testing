@@ -1,4 +1,6 @@
 class MappingsController < ApplicationController
+	
+	before_filter :authenticate_user!
 	before_filter :find_mapping
 
 	def new

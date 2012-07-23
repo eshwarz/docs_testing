@@ -1,5 +1,7 @@
 class DocsController < ApplicationController
 	
+	before_filter :authenticate_user!
+	
 	def index
 		@docs = Docs.paginate(:page => params[:page], :per_page => 10)
 	end

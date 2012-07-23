@@ -1,4 +1,6 @@
 class VersionsController < ApplicationController
+	
+	before_filter :authenticate_user!
 	before_filter :find_version
 
 	def new

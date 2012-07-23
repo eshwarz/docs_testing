@@ -29,3 +29,7 @@ body {
 .modal-body {
 	max-height: 420px;
 }
+
+#modal_header {
+	@include m(0px);
+}
