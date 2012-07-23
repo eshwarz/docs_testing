@@ -2,12 +2,12 @@
 	div class="modal-body" id="modal_body"
 		= hidden_field :mapping, :docs_id, :value => params[:docs_id]
 
-		= bs_f f, :us_cfrs
-		= bs_f f, :japan
-		= bs_f f, :pic_s
-		= bs_f f, :eudralex
-		= bs_f f, :iso
-		= bs_f f, :ich
+		= bs_f f, :us_cfrs, :label => 'US CFRS'
+		= bs_f f, :japan, :label => 'Japan'
+		= bs_f f, :pic_s, :label => 'PIC/S'
+		= bs_f f, :eudralex, :label => ''
+		= bs_f f, :iso, :label => 'ISO'
+		= bs_f f, :ich, :label => 'ICH'
 
 	div class="modal-footer" id="modal_footer"
 		a href="#" class="btn" data-dismiss="modal" Close

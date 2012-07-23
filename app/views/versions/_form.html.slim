@@ -3,16 +3,11 @@
 		= hidden_field :version, :docs_id, :value => params[:docs_id]
 		= bs_f f, :group_num, :as => :select, :collection => Version.group_nums, :prompt => 'Select Group Number'
 		= bs_f f, :version_number
-		= bs_f f, :lia_status, :as => :select, :collection => Version.lia_statuses, :prompt => 'Select LIA status'
+		= bs_f f, :lia_status, :as => :select, :collection => Version.lia_statuses, :prompt => 'Select LIA status', :label => 'LIA Status'
 		= bs_f f, :comment
 		= bs_f f, :description_of_change
-		= bs_f f, :capa_number
+		= bs_f f, :capa_number, :label => 'CAPA Number'
 		= bs_f f, :revision_type, :as => :select, :collection => Version.revision_types, :prompt => 'Select Revision Type'
-	
-		/ div
-		/ 	= link_to 'Issues...', '#', :class => 'btn btn-primary fr mls'
-		/ 	= link_to 'Dates...', '#', :class => 'btn btn-primary fr'
-		/ 	.clearfix
 
 	div class="modal-footer" id="modal_footer"
 		a href="#" class="btn" data-dismiss="modal" Close

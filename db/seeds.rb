@@ -16,6 +16,7 @@ end
 require 'spreadsheet'
 # Parsing documents spreadsheet and seeding it
 if Docs.count == 0
+	num = 20
 	Spreadsheet.open('db/documents.xls') do |book|
 		book.worksheet('owssvr').each_with_index do |row, index|
 			break if row[0].nil?
@@ -23,21 +24,32 @@ if Docs.count == 0
 			Docs.create( :doclink_ref_num => row[1], :parent => row[0], :condor_ref_num => row[2], :german_doc_num => row[3],  :title => row[5] )
 			puts "Record #{index} inserted"
 		end
+		if index > num
+			break
+		end
 	end
 end
 
 if Version.count == 0
+	num = 20
+	g_nums = Version.group_nums
+	lias = Version.lia_statuses
+	revs = Version.revision_types
 	Docs.all.each_with_index do |doc, index|
 		rand(20).times do |i|
 			j = i+1
-			doc.versions.create( :docs_id => doc.id, :group_num => rand(400), :version_number => j, :lia_status => 'progress', :comment => "this is test comment for doc no #{index+1}", :description_of_change => "Description for doc no #{index+1}", :capa_number => rand(999999), :revision_type => 'random' )
+			doc.versions.create( :docs_id => doc.id, :group_num => g_nums[rand(g_nums.count)], :version_number => j, :lia_status => lias[rand(lias.count)], :comment => "this is test comment for doc no #{index+1}", :description_of_change => "Description for doc no #{index+1}", :capa_number => rand(999999), :revision_type => revs[rand(revs.count)] )
 			puts "Doc versions seeds for #{index+1}"
+		end
+		if index > num
+			break
 		end
 	end
 end
 
 
 if Request.count == 0
+	num = 20
 	request_types = [ 'New', 'Revised' ]
 	check = [ 'yes', 'No' ]
 	t_impact = [ 'R&U only', 'Update', 'Create New' ]
@@ -73,10 +85,14 @@ if Request.count == 0
 			puts "Doc requests seeds for #{index+1}"
 
 		end
+		if index > num
+			break
+		end
 	end
 end
 
 if Mapping.count == 0
+	num = 20
 	Docs.all.each_with_index do |doc, index|
 		rand(5).times do |i|
 			j = i+1
@@ -89,6 +105,9 @@ if Mapping.count == 0
 													:ich => "ich #{j}"
 												 )
 			puts "Doc mappings seeds for #{index+1}"
+		end
+		if index > num
+			break
 		end
 	end
 end
