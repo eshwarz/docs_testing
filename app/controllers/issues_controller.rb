@@ -21,6 +21,7 @@ class IssuesController < ApplicationController
 	def create
 		if params and params[:issue]
 			@issue = Issue.create params[:issue]
+			@version = @issue.version
 			if @issue
 				flash[:success] = "Issue created!"
 			else
