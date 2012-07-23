@@ -4,18 +4,20 @@ class Timeline < ActiveRecord::Base
 	
 	attr_accessible :timeline_type, :date, :comment, :version_id
 
+	default_scope :order => 'timeline_type'
+
 	def self.timeline_types
 		[
 			'Final draft to PQS BMT',
 			'Tech review period',
-			'out for stakeholder review',
-			'stakeholder review ends',
-			'author adjudication complete',
-			'to PQS CT for OU review',
+			'Out for stakeholder review',
+			'Stakeholder review ends',
+			'Author adjudication complete',
+			'To PQS CT for OU review',
 			'OU review complete',
 			'OU review mtg',
-			'approval',
-			'effective and LIA due'
+			'Approval',
+			'Effective and LIA due'
 		]
 	end
 
