@@ -5,7 +5,7 @@ div class="modal-body" id="modal_body" style="padding-top: 0px;"
 	#issue_form.hide
 
 	div
-		.fl= will_paginate @issues
+		.fl= will_paginate @issues, :remote => true
 		a class="btn btn-primary fr pagination_link" href="#docsModal" id="new_issue" version-id="#{version.id}" New Issue
 	.clearfix
 
@@ -21,7 +21,7 @@ div class="modal-body" id="modal_body" style="padding-top: 0px;"
 			- @issues.each do |issue|
 				= render :partial => 'issue', :locals => { :issue => issue }
 
-	= will_paginate @issues
+	= will_paginate @issues, :remote => true
 
 div class="modal-footer" id="modal_footer"
 	a href="#" class="btn" data-dismiss="modal" Close

@@ -33,4 +33,3 @@ function close_form() {
 		$('#issue_form').slideUp()
 	})
 }
-
