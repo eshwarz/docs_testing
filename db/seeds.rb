@@ -94,7 +94,7 @@ if Mapping.count == 0
 end
 
 if Issue.count == 0
-	issue_types = [ 'Bio OU', 'SM OU', 'CMO OU', 'PTD OU', 'Other OU' ]
+	issue_types = Issue.issue_types
 	num = 20
 	Version.all.each_with_index do |version, index|
 		rand(15).times do |i|
@@ -110,19 +110,7 @@ end
 
 if Timeline.count == 0
 	num = 20
-
-	timeline_types = [
-										'Final draft to PQS BMT',
-										'Tech review period',
-										'out for stakeholder review',
-										'stakeholder review ends',
-										'author adjudication complete',
-										'to PQS CT for OU review',
-										'OU review complete',
-										'OU review mtg',
-										'approval',
-										'effective and LIA due'
-									]
+	timeline_types = Timeline.timeline_types
 	Version.all.each_with_index do |version, index|
 		rand(15).times do |i|
 			j = i+1

@@ -1,0 +1,3 @@
+$('#modal_header').html('View Timelines')
+$('#modal_content').html("<%= escape_javascript( render :partial => 'timelines/index', :locals => { :timelines => @timelines } ) %>")
+ajax_paginate()

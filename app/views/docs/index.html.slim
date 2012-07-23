@@ -1,5 +1,4 @@
 h1.tc Documents for PTQS
-p 
 
 = link_to 'New Document', new_doc_path
 
@@ -37,4 +36,5 @@ table.table-striped.table-bordered.table-condensed
 				= link_to "Edit", edit_doc_path(d.id) 
 				= " / " 
 				= link_to "Delete", doc_path(d.id), :method => "delete", :confirm => "Are you sure?"
+
 = will_paginate @docs

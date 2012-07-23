@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	new_issue()
 	view_issues()
-	close_form()
+	close_issue_form()
 })
 
 function new_issue () {
@@ -28,7 +28,7 @@ function view_issues () {
 	})
 }
 
-function close_form() {
+function close_issue_form() {
 	$('#close_issue_form').live('click', function(){
 		$('#issue_form').slideUp()
 	})
