@@ -5,7 +5,7 @@
 		= hidden_field :timeline, :version_id, :value => @version.id
 
 		/ = bs_f f, :timeline_type, :as => :select, :collection => Timeline.timeline_types, :prompt => 'Select Timeline Type'
-		= bs_f f, :date, :class => 'datepicker'
+		= bs_f f, :date, :class => 'datepicker', :autocomplete => 'off'
 		= bs_f f, :comment
 		div
 			.fr
