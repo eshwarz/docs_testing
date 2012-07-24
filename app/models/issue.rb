@@ -8,4 +8,8 @@ class Issue < ActiveRecord::Base
 		[ 'Bio OU', 'SM OU', 'CMO OU', 'PTD OU', 'Other OU' ]
 	end
 
+	def self.statuses
+		[ 'Yes', 'No' ]
+	end
+
 end

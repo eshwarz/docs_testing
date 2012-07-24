@@ -1,12 +1,12 @@
 - version = @version
 
-div class="modal-body" id="modal_body" style="padding-top: 0px;"
+div class="modal-body" id="modal_body"
 
 	#issue_form.hide
 
 	div
 		.fl= will_paginate @issues, :remote => true
-		a class="btn btn-primary fr pagination_link" href="#docsModal" id="new_issue" version-id="#{version.id}" New Issue
+		/ a class="btn btn-primary fr pagination_link" href="#docsModal" id="new_issue" version-id="#{version.id}" New Issue
 	.clearfix
 
 

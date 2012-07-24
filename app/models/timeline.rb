@@ -4,7 +4,7 @@ class Timeline < ActiveRecord::Base
 	
 	attr_accessible :timeline_type, :date, :comment, :version_id
 
-	default_scope :order => 'timeline_type'
+	# default_scope :order => 'timeline_type'
 
 	def self.timeline_types
 		[

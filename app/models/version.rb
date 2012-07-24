@@ -1,11 +1,25 @@
 class Version < ActiveRecord::Base
 
+	after_create :set_default_associations
 	validates :docs_id, :presence => true
 
 	# relations
 	has_many :timelines
 	has_many :issues
 	belongs_to :docs
+
+	def set_default_associations
+		
+		# default issues for created version
+		Issue.issue_types.each do |i|
+			self.issues.create( :issue_type => i, :issue => Issue.statuses[1] )
+		end
+		
+		# default timelines for created version
+		Timeline.timeline_types.each do |t|
+			self.timelines.create( :timeline_type => t )
+		end
+	end
 
 	def self.group_nums
 		['D', 'E', 'F', 'G', 'H', 'Special']

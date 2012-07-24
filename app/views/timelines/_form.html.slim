@@ -1,15 +1,18 @@
 - timeline = @timeline
 
-.ptl
-	.well
-		= form_for timeline, :html => { :class => 'form-horizontal' }, :remote => true do |f|
-			= hidden_field :timeline, :version_id, :value => @version.id
+.well
+	= form_for timeline, :html => { :class => 'form-horizontal' }, :remote => true do |f|
+		= hidden_field :timeline, :version_id, :value => @version.id
 
-			= bs_f f, :timeline_type, :as => :select, :collection => Timeline.timeline_types, :prompt => 'Select Timeline Type'
-			= bs_f f, :date
-			= bs_f f, :comment
-			div
-				.fr
-					a href="#" class="btn" id="close_timeline_form" Cancel
-					= f.submit 'Save', :class => 'mls btn btn-primary'
-				.clearfix
+		/ = bs_f f, :timeline_type, :as => :select, :collection => Timeline.timeline_types, :prompt => 'Select Timeline Type'
+		= bs_f f, :date, :class => 'datepicker'
+		= bs_f f, :comment
+		div
+			.fr
+				a href="#" class="btn" id="close_timeline_form" Cancel
+				= f.submit 'Save', :class => 'mls btn btn-primary'
+			.clearfix
+
+
+javascript:
+	$(".datepicker").datepicker()

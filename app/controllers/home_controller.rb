@@ -6,8 +6,8 @@ class HomeController < ApplicationController
 		@home_page = "This is home page of PTQS Documents"
 	end
 
-	def reports
-		@reports_page = "This is the reports page of PTQS Documents"
-	end
+	# def reports
+	# 	@reports_page = "This is the reports page of PTQS Documents"
+	# end
 
 end

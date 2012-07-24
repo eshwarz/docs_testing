@@ -1,12 +1,12 @@
 - version = @version
 
-div class="modal-body" id="modal_body" style="padding-top: 0px;"
+div class="modal-body" id="modal_body"
 
 	#timeline_form.hide
 
 	div
 		.fl= will_paginate @timelines, :remote => true
-		a class="btn btn-primary fr pagination_link" href="#docsModal" id="new_timeline" version-id="#{version.id}" New Timeline
+		/ a class="btn btn-primary fr pagination_link" href="#docsModal" id="new_timeline" version-id="#{version.id}" New Timeline
 	.clearfix
 
 

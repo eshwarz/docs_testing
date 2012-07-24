@@ -2,7 +2,7 @@ tr id="timeline_#{timeline.id}"
 	td= timeline.timeline_type
 	td= timeline.date
 	td= timeline.comment
-	td
+	td.tc
 		= link_to 'Edit', edit_timeline_path(timeline.id)+"?version_id=#{@version.id}", :remote => true
-		= " / "
-		= link_to 'Delete', timeline_path(timeline.id), :method => 'delete', :confirm => 'Are you sure?', :remote => true
+		/ = " / "
+		/ = link_to 'Delete', timeline_path(timeline.id), :method => 'delete', :confirm => 'Are you sure?', :remote => true

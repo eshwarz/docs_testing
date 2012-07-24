@@ -21,8 +21,12 @@ Ptqs::Application.routes.draw do
   resources :timelines
 
   controller :home do
-    match '/reports', :action => 'reports', :as => 'reports'
+    # match '/reports', :action => 'reports', :as => 'reports'
     match '/home', :action => 'index', :as => 'home'
+  end
+
+  controller :reports do
+    match '/reports', :action => 'index', :as => 'reports'
   end
 
   controller :devise_checker do

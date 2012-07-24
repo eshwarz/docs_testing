@@ -24,9 +24,6 @@ if Docs.count == 0
 			Docs.create( :doclink_ref_num => row[1], :parent => row[0], :condor_ref_num => row[2], :german_doc_num => row[3],  :title => row[5] )
 			puts "Record #{index} inserted"
 		end
-		if index > num
-			break
-		end
 	end
 end
 
@@ -113,31 +110,32 @@ if Mapping.count == 0
 end
 
 if Issue.count == 0
+	temp_num = 20						#remove this line for production
 	issue_types = Issue.issue_types
-	num = 20
+	issue_statuses = Issue.statuses
+
 	Version.all.each_with_index do |version, index|
-		rand(15).times do |i|
-			j = i+1
-			version.issues.create( :issue_type => issue_types[rand(5)], :issue => "This is issue #{j}", :comment => "This is test comment #{j}" )
+		issue_types.each do |i|
+			version.issues.create( :issue_type => i, :issue => issue_statuses[1] )
 			puts "Version issues seeds for #{index+1}"
 		end
-		if index > num
-			break
-		end
+		if temp_num > index		#remove this line for production
+			break								#remove this line for production
+		end										#remove this line for production
 	end
 end
 
 if Timeline.count == 0
-	num = 20
+	temp_num = 20						#remove this line for production
 	timeline_types = Timeline.timeline_types
+
 	Version.all.each_with_index do |version, index|
-		rand(15).times do |i|
-			j = i+1
-			version.timelines.create( :timeline_type => timeline_types[rand(10)], :date => "#{rand(31)+1}-#{rand(12)+1}-#{rand(12)+2000}", :comment => "This is test comment #{j}" )
+		timeline_types.each do |t|
+			version.timelines.create( :timeline_type => t )
 			puts "Version timelines seeds for #{index+1}"
 		end
-		if index > num
-			break
-		end
+		if temp_num > index		#remove this line for production
+			break								#remove this line for production
+		end										#remove this line for production
 	end
 end

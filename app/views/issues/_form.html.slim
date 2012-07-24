@@ -1,15 +1,14 @@
 - issue = @issue
 
-.ptl
-	.well
-		= form_for issue, :html => { :class => 'form-horizontal' }, :remote => true do |f|
-			= hidden_field :issue, :version_id, :value => @version.id
+.well
+	= form_for issue, :html => { :class => 'form-horizontal' }, :remote => true do |f|
+		= hidden_field :issue, :version_id, :value => @version.id
 
-			= bs_f f, :issue_type, :as => :select, :collection => Issue.issue_types, :prompt => 'Select Issue Type'
-			= bs_f f, :issue
-			= bs_f f, :comment
-			div
-				.fr
-					a href="#" class="btn" id="close_issue_form" Cancel
-					= f.submit 'Save', :class => 'mls btn btn-primary'
-				.clearfix
+		= bs_f f, :issue_type, :as => :select, :collection => Issue.issue_types, :prompt => 'Select Issue Type'
+		= bs_f f, :issue
+		= bs_f f, :comment
+		div
+			.fr
+				a href="#" class="btn" id="close_issue_form" Cancel
+				= f.submit 'Save', :class => 'mls btn btn-primary'
+			.clearfix
