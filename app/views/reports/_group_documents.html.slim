@@ -1,1 +1,16 @@
-div documents in a group
+div style="min-height: 500px;"
+	.well.form-search
+		/ = select_tag 'group_num', @group_numbers, :prompt => 'Select Group number', :style => 'width: 100%'
+
+
+		ul class="nav nav-pills no_margin"
+			
+			li class="dropdown" id="menu1" style="width: 100%"
+				a.dropdown-toggle data-toggle="dropdown" href="#menu1"
+					|Select Group Number
+					b class="caret"
+
+				ul class="dropdown-menu" style="width: 100%"
+					- @group_numbers.each do |g|
+						li
+							a href="#" class="documents_in_a_group" id="#{g}" #{g}

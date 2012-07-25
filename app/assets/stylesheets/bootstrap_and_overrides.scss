@@ -33,3 +33,7 @@ body {
 #modal_header {
 	@include m(0px);
 }
+
+.caret {
+	float: right;
+}

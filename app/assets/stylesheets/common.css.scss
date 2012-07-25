@@ -79,3 +79,10 @@ ul.floated {
 	@include absolute;
 }
 
+.full_width {
+	width: 100%;
+}
+
+.no_margin {
+	@include m(0px !important);
+}
