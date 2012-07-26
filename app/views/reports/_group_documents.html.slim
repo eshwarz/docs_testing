@@ -1,7 +1,5 @@
 div style="min-height: 500px;"
 	.well.form-search
-		/ = select_tag 'group_num', @group_numbers, :prompt => 'Select Group number', :style => 'width: 100%'
-
 
 		ul class="nav nav-pills no_margin"
 			
@@ -13,4 +11,7 @@ div style="min-height: 500px;"
 				ul class="dropdown-menu" style="width: 100%"
 					- @group_numbers.each do |g|
 						li
-							a href="#" class="documents_in_a_group" id="#{g}" #{g}
+							/ a href="#" class="group_documents" id="#{g}" #{g}
+							= link_to g, reports_group_documents_path(:group_num => g), :remote => true
+
+	#group_documents_results

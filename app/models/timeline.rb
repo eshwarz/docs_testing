@@ -22,3 +22,16 @@ class Timeline < ActiveRecord::Base
 	end
 
 end
+# == Schema Information
+#
+# Table name: timelines
+#
+#  id            :integer         not null, primary key
+#  date          :date
+#  comment       :text
+#  created_at    :datetime        not null
+#  updated_at    :datetime        not null
+#  version_id    :integer
+#  timeline_type :string(255)
+#
+

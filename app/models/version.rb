@@ -48,5 +48,6 @@ end
 #  revision_type         :string(255)
 #  created_at            :datetime        not null
 #  updated_at            :datetime        not null
+#  lia_status            :string(255)
 #
 
