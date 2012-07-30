@@ -28,6 +28,7 @@ Ptqs::Application.routes.draw do
   controller :reports do
     match '/reports', :action => 'index', :as => 'reports'
     get 'reports/group_documents'
+    get 'reports/group_status'
   end
 
   controller :devise_checker do
