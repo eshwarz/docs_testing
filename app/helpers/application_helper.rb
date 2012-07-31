@@ -84,8 +84,7 @@ module ApplicationHelper
 			collection = opts[:collection]
 			as_field = ""
 			collection.each do |radio_opt|
-				# as_field += form.radio_button field, radio_opt, opts.except(:as, :collection)
-				# as_field += (radio_opt.class == Array) ? radio_opt[1] : radio_opt
+
 				as_field += content_tag(
 																'label', 
 																(
@@ -98,8 +97,8 @@ module ApplicationHelper
 
 		end
 		
-		form_field = content_tag( 'div', as_field, :class => "controls" ) if opts[:as].nil? 
-		form_field = content_tag( 'div', as_field.html_safe, :class => "controls" ) if opts[:as] == :radio 
+		# form_field = content_tag( 'div', as_field, :class => "controls" ) if opts[:as].nil? 
+		form_field = content_tag( 'div', as_field.html_safe, :class => "controls" )
 		get_row = form_label + form_field
 
 		content_tag('div', get_row, :class => 'control-group')

@@ -25,10 +25,10 @@ ul {
 #wrapper {
 	min-width:980px;
 }
-.container {
-	@include content_width;
-	margin: auto;
-}
+//.container {
+//	@include content_width;
+//	margin: auto;
+//}
 .container_padding {
 	padding-bottom: 100px;
 }
