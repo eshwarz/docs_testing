@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	
 	$('.dropdown-menu li a').click(function(){
 		
 		var link_text = $(this).html() + "<b class='caret'></b>"
