@@ -1,4 +1,4 @@
-Ptqs App for Solivar Technologies
+PTQS Documents for Solivar Technologies
 
 Step 1 : Clone project from github
 Step 2 : Rename folder name from "PtqsApp" to "NewProjectName"
