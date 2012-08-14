@@ -1,0 +1,4 @@
+$("#issue_<%= @issue.id %>").replaceWith("<%= escape_javascript( render :partial => 'issue', :locals => { :issue => @issue } ) %>")
+$('#issue_form').slideUp()
+$('#flashes').replaceWith("<%= escape_javascript( render :partial => 'shared/notice' ) %>")
+hide_alerts()

@@ -12,6 +12,8 @@ class VersionsController < ApplicationController
 	end
 
 	def edit
+		@issues = @version.issues
+		@timelines = @version.timelines
 		respond_to do |format|
 			format.js { render :edit }
 			format.html {}

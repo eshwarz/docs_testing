@@ -86,3 +86,11 @@ ul.floated {
 .no_margin {
 	@include m(0px !important);
 }
+
+
+
+// misc css
+
+.ml70 {
+	@include ml(70px);
+}

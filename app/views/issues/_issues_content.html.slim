@@ -1,0 +1,17 @@
+#issue_form.hide
+
+div
+	/ a class="btn btn-primary fr pagination_link" href="#docsModal" id="new_issue" version-id="#{version.id}" New Issue
+.clearfix
+
+
+table.table-striped.table-bordered.table-condensed width="100%"
+	thead
+		tr
+			th Type
+			th Issue
+			th Comment
+			th Actions
+	tbody#all_issues
+		- @issues.each do |issue|
+			= render :partial => 'issues/issue', :locals => { :issue => issue }

@@ -2,26 +2,7 @@
 
 div class="modal-body" id="modal_body"
 
-	#timeline_form.hide
-
-	div
-		.fl= will_paginate @timelines, :remote => true
-		/ a class="btn btn-primary fr pagination_link" href="#docsModal" id="new_timeline" version-id="#{version.id}" New Timeline
-	.clearfix
-
-
-	table.table-striped.table-bordered.table-condensed width="100%"
-		thead
-			tr
-				th Type
-				th Date
-				th Comment
-				th Actions
-		tbody#all_timelines
-			- @timelines.each do |timeline|
-				= render :partial => 'timeline', :locals => { :timeline => timeline }
-
-	= will_paginate @timelines, :remote => true
-
+	= render :partial => 'timelines/timelines_content'
+	
 div class="modal-footer" id="modal_footer"
 	a href="#" class="btn" data-dismiss="modal" Close

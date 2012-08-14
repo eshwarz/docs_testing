@@ -3,12 +3,12 @@
 .modal {
 	form {
 		@include m(0px);
-		input[type="text"], input[type="password"] {
-			width: 320px;
-		}
-		select {
-			width: 330px;
-		}
+//		input[type="text"], input[type="password"] {
+//			width: 320px;
+//		}
+//		select {
+//			width: 330px;
+//		}
 		input.mini_field, textarea.mini_field {
 			width: 100px !important;
 		}
