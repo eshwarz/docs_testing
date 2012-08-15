@@ -1,17 +1,22 @@
 div style="min-height: 500px;"
-	.well.form-search
+	
+	.fr style="margin-right:120px;"
+		.form-search
+			.lh35.fb.fl.mrm Select Group Number
+			ul class="nav nav-pills no_margin fl"
+				
+				li class="dropdown" id="menu1"
+					a.dropdown-toggle data-toggle="dropdown" href="#menu1"
+						|&nbsp;
+						b class="caret"
 
-		ul class="nav nav-pills no_margin"
-			
-			li class="dropdown" id="menu1" style="width: 100%"
-				a.dropdown-toggle data-toggle="dropdown" href="#menu1"
-					|Select Group Number
-					b class="caret"
-
-				ul class="dropdown-menu" style="width: 100%"
-					- @group_numbers.each do |g|
-						li
-							/ a href="#" class="group_documents" id="#{g}" #{g}
-							= link_to g, reports_group_documents_path(:group_num => g), :remote => true
+					ul class="dropdown-menu"
+						- @group_numbers.each do |g|
+							li
+								/ a href="#" class="group_documents" id="#{g}" #{g}
+								= link_to g, reports_group_documents_path(:group_num => g), :remote => true
+			.clearfix
 
 	#group_documents_results
+
+	

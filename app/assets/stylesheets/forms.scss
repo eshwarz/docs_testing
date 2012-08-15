@@ -15,14 +15,26 @@
 		select.mini_field {
 			width: 110px !important;
 		}
+		input.medium_field, textarea.medium_field {
+			width: 150px !important;
+		}
+		select.medium_field {
+			width: 160px !important;
+		}
 	}
 	.well {
 		form {
-			input[type="text"], input[type="password"] {
-				width: 307px;
+			.control-label {
+				width: 25%;
 			}
-			select {
-				width: 317px;
+			.controls
+			{
+				input[type="text"], input[type="password"] {
+					width: 97%;
+				}
+				select {
+					width: 97%;
+				}
 			}
 		}
 	}
@@ -52,4 +64,10 @@ input, select, textarea {
 			@include mb(10px);
 		}
 	}
+}
+
+.radio.horizontal {
+	@include p(5px 5px 0px 5px !important);
+	@include ml(20px);
+	float: left !important;
 }

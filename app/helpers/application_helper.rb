@@ -88,10 +88,9 @@ module ApplicationHelper
 				as_field += content_tag(
 																'label', 
 																(
-																	form.radio_button( field, radio_opt, opts.except(:as, :collection) ) +
-																	((radio_opt.class == Array) ? radio_opt[1] : radio_opt)
+																	radio_opt.class == Array ? (form.radio_button( field, radio_opt[0], opts.except(:as, :collection) ) + radio_opt[1]) : (form.radio_button( field, radio_opt, opts.except(:as, :collection) ) + radio_opt)
 																),
-																:class => 'radio'
+																:class => "radio #{opts[:align]}"
 															)
 			end
 
@@ -102,6 +101,10 @@ module ApplicationHelper
 		get_row = form_label + form_field
 
 		content_tag('div', get_row, :class => 'control-group')
+	end
+
+	def bool
+		return [[true, 'Yes'], [false, 'No']]
 	end
 	
 end

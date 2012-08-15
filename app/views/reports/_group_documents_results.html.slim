@@ -1,4 +1,6 @@
-h3.tc Documents in group &quot;#{@group_num}&quot;
+/ - if group_num.present?
+
+h3 Documents in group &quot;#{@group_num}&quot;
 
 = will_paginate @results, :remote => true
 

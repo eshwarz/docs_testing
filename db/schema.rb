@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120720115135) do
+ActiveRecord::Schema.define(:version => 20120815161940) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -173,9 +173,29 @@ ActiveRecord::Schema.define(:version => 20120720115135) do
     t.text     "description_of_change"
     t.integer  "capa_number"
     t.string   "revision_type"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.string   "lia_status"
+    t.boolean  "bio_ou"
+    t.boolean  "sm_ou"
+    t.boolean  "cmo_ou"
+    t.boolean  "ptd_ou"
+    t.boolean  "other_ou"
+    t.date     "final_draft_pqs_bmt"
+    t.date     "tech_review"
+    t.date     "out_for_stakeholder_review"
+    t.date     "stakeholder_review_ends"
+    t.date     "author_adjudication"
+    t.date     "pqs_ct_ou_review"
+    t.date     "ou_review_complete"
+    t.date     "ou_review_mtg"
+    t.date     "approval"
+    t.date     "effective_lia_due"
+    t.text     "bio_ou_comment"
+    t.text     "sm_ou_comment"
+    t.text     "cmo_ou_comment"
+    t.text     "ptd_ou_comment"
+    t.text     "other_ou_comment"
   end
 
   add_index "versions", ["docs_id"], :name => "index_versions_on_docs_id"

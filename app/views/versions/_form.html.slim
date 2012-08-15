@@ -2,24 +2,24 @@
 - doc = Docs.find doc_id
 
 
-div class="modal-body" id="modal_body"
-	h3.pagination-centered.well.pas= doc.doclink_ref_num + ' : ' + doc.title
-	.ml70	
-		.row
-			.span4
-				= beautify_params 'doclink_ref_num'.humanize, doc.doclink_ref_num
-				= beautify_params 'global_coord'.humanize, doc.global_coord
-				= beautify_params 'parent'.humanize, doc.parent
-				= beautify_params 'condor_ref_num'.humanize, doc.condor_ref_num
-			.span4
-				= beautify_params 'german_doc_num'.humanize, doc.german_doc_num
-				= beautify_params 'author'.humanize, doc.author
-				= beautify_params 'chapter_name'.humanize, doc.chapter_name
-				= beautify_params 'training_type'.humanize, doc.training_type
-				= beautify_params 'comments'.humanize, doc.comments
-	hr
+= form_for version, :html => { :class => 'form-horizontal' }, :remote => true do |f|
+	div class="modal-body" id="modal_body"
+		h3.pagination-centered.well.pas= doc.doclink_ref_num + ' : ' + doc.title
+		.ml70	
+			.row
+				.span4
+					= beautify_params 'doclink_ref_num'.humanize, doc.doclink_ref_num
+					= beautify_params 'global_coord'.humanize, doc.global_coord
+					= beautify_params 'parent'.humanize, doc.parent
+					= beautify_params 'condor_ref_num'.humanize, doc.condor_ref_num
+				.span4
+					= beautify_params 'german_doc_num'.humanize, doc.german_doc_num
+					= beautify_params 'author'.humanize, doc.author
+					= beautify_params 'chapter_name'.humanize, doc.chapter_name
+					= beautify_params 'training_type'.humanize, doc.training_type
+					= beautify_params 'comments'.humanize, doc.comments
+		hr
 
-	= form_for version, :html => { :class => 'form-horizontal' }, :remote => true do |f|
 		.row.mts
 			.span4
 				= hidden_field :version, :docs_id, :value => doc_id
@@ -31,16 +31,39 @@ div class="modal-body" id="modal_body"
 				= bs_f f, :description_of_change
 				= bs_f f, :capa_number, :label => 'CAPA Number'
 				= bs_f f, :revision_type, :as => :select, :collection => Version.revision_types, :prompt => 'Select Revision Type'
-				.fr= f.submit 'Save', :class => 'btn btn-primary'
-		/ .fr.mrl= f.submit 'Save', :class => 'btn btn-primary'
-		/ .clearfix
 
-	- if version.id != nil
-		h3.pagination-centered.well.pas Issues
-		= render :partial => 'issues/issues_content'
-		h3.pagination-centered.well.pas.mtl Timelines
-		= render :partial => 'timelines/timelines_content'
+		.row
+			.span4
+				h3.pagination-centered.well.pas.mhn Issues
+				= bs_f f, :bio_ou, :as => :radio, :collection => bool, :align => 'horizontal', :label => 'BIO OU'
+				= bs_f f, :bio_ou_comment, :class => 'mini_field'
+				= bs_f f, :sm_ou, :as => :radio, :collection => bool, :align => 'horizontal', :label => 'SM OU'
+				= bs_f f, :sm_ou_comment, :class => 'mini_field'
+				= bs_f f, :cmo_ou, :as => :radio, :collection => bool, :align => 'horizontal', :label => 'CMO OU'
+				= bs_f f, :cmo_ou_comment, :class => 'mini_field'
+				= bs_f f, :ptd_ou, :as => :radio, :collection => bool, :align => 'horizontal', :label => 'PTD OU'
+				= bs_f f, :ptd_ou_comment, :class => 'mini_field'
+				= bs_f f, :other_ou, :as => :radio, :collection => bool, :align => 'horizontal', :label => 'Other OU'
+				= bs_f f, :other_ou_comment, :class => 'mini_field'
+			
+			.span5
+				h3.pagination-centered.well.pas.mhn Timelines
+				= bs_f f, :final_draft_pqs_bmt, :class => 'datepicker', :label => 'Final draft to PQS BMT'
+				= bs_f f, :tech_review, :class => 'datepicker', :label => 'Tech review period'
+				= bs_f f, :out_for_stakeholder_review, :class => 'datepicker', :label => 'Out for stakeholder review'
+				= bs_f f, :stakeholder_review_ends, :class => 'datepicker', :label => 'Stakeholder review ends'
+				= bs_f f, :author_adjudication, :class => 'datepicker', :label => 'Author adjudication complete'
+				= bs_f f, :pqs_ct_ou_review, :class => 'datepicker', :label => 'To PQS CT for OU review'
+				= bs_f f, :ou_review_complete, :class => 'datepicker', :label => 'OU review complete'
+				= bs_f f, :ou_review_mtg, :class => 'datepicker', :label => 'OU review mtg'
+				= bs_f f, :approval, :class => 'datepicker', :label => 'Approval'
+				= bs_f f, :effective_lia_due, :class => 'datepicker', :label => 'Effective and LIA due'
+
 		.mtl
 
-div class="modal-footer" id="modal_footer"
-	a href="#" class="btn" data-dismiss="modal" Close
+	div class="modal-footer" id="modal_footer"
+		a href="#" class="btn" data-dismiss="modal" Close
+		= f.submit 'Save', :class => 'btn btn-primary'
+
+javascript:
+	$('.datepicker').datepicker()
