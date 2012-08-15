@@ -1,13 +1,36 @@
+- doc_id = params[:docs_id]
+- doc = Docs.find doc_id
+
 = form_for mapping, :html => { :class => 'form-horizontal' }, :remote => true do |f|
 	div class="modal-body" id="modal_body"
+		h3.pagination-centered.well.pas= doc.title
+		.ml70	
+			.row
+				.span4
+					= beautify_params 'doclink_ref_num'.humanize, doc.doclink_ref_num
+					= beautify_params 'global_coord'.humanize, doc.global_coord
+					= beautify_params 'parent'.humanize, doc.parent
+					= beautify_params 'condor_ref_num'.humanize, doc.condor_ref_num
+				.span4
+					= beautify_params 'german_doc_num'.humanize, doc.german_doc_num
+					= beautify_params 'author'.humanize, doc.author
+					= beautify_params 'chapter_name'.humanize, doc.chapter_name
+					= beautify_params 'training_type'.humanize, doc.training_type
+					= beautify_params 'comments'.humanize, doc.comments
+
+		hr
+
 		= hidden_field :mapping, :docs_id, :value => params[:docs_id]
 
-		= bs_f f, :us_cfrs, :label => 'US CFRS'
-		= bs_f f, :japan, :label => 'Japan'
-		= bs_f f, :pic_s, :label => 'PIC/S'
-		= bs_f f, :eudralex, :label => ''
-		= bs_f f, :iso, :label => 'ISO'
-		= bs_f f, :ich, :label => 'ICH'
+		.row
+			.span4
+				= bs_f f, :us_cfrs, :label => 'US CFRS'
+				= bs_f f, :japan, :label => 'Japan'
+				= bs_f f, :pic_s, :label => 'PIC/S'
+			.span4
+				= bs_f f, :eudralex, :label => ''
+				= bs_f f, :iso, :label => 'ISO'
+				= bs_f f, :ich, :label => 'ICH'
 
 	div class="modal-footer" id="modal_footer"
 		a href="#" class="btn" data-dismiss="modal" Close
