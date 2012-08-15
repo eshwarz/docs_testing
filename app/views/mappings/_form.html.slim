@@ -3,7 +3,7 @@
 
 = form_for mapping, :html => { :class => 'form-horizontal' }, :remote => true do |f|
 	div class="modal-body" id="modal_body"
-		h3.pagination-centered.well.pas= doc.title
+		h3.pagination-centered.well.pas= doc.doclink_ref_num + ' : ' + doc.title
 		.ml70	
 			.row
 				.span4
