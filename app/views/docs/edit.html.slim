@@ -8,20 +8,20 @@
 	.tabbable
 		ul.nav.nav-tabs
 			li.active
-				a href="#versions" data-toggle="tab" Versions
-			li
 				a href="#requests" data-toggle="tab" Requests
+			li
+				a href="#versions" data-toggle="tab" Versions
 			li
 				a href="#mappings" data-toggle="tab" Mapping
 			li
 				a href="#history" data-toggle="tab" History
 
 	.tab-content
-		#versions.tab-pane.active
-			= render :partial => 'docs/tabs/doc_versions', :locals => { :doc => doc }
 
-		#requests.tab-pane
+		#requests.tab-pane.active
 			= render :partial => 'docs/tabs/doc_requests', :locals => { :doc => doc }
+		#versions.tab-pane
+			= render :partial => 'docs/tabs/doc_versions', :locals => { :doc => doc }
 
 		#mappings.tab-pane
 			= render :partial => 'docs/tabs/doc_mappings', :locals => { :doc => doc }
