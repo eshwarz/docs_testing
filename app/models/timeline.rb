@@ -1,8 +1,6 @@
 class Timeline < ActiveRecord::Base
 
-	belongs_to :version
-	
-	attr_accessible :timeline_type, :date, :comment, :version_id
+	attr_accessible :timeline_type, :date, :comment, :group_num
 
 	# default_scope :order => 'timeline_type'
 

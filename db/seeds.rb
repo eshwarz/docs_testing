@@ -139,3 +139,14 @@ end
 # 		end										#remove this line for production
 # 	end
 # end
+
+if Timeline.count == 0
+	timeline_types = Timeline.timeline_types
+	group_nums = Version.group_nums
+	group_nums.each do |g_num|
+		timeline_types.each do |t|
+			imelines.create( :timeline_type => t, :group_num => g_num )
+			puts "Version timelines seeds for #{index+1}"
+		end
+	end
+end
