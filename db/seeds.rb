@@ -146,7 +146,7 @@ if Timeline.count == 0
 	group_nums.each do |g_num|
 		timeline_types.each do |t|
 			Timeline.create( :timeline_type => t, :group_num => g_num )
-			puts "Version timelines seeds for #{g_num}"
+			puts "Timeline seeds for #{g_num}"
 		end
 	end
 end
