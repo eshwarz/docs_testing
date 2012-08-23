@@ -1,0 +1,31 @@
+.fl= will_paginate @docs
+.clearfix
+table.table-striped.table-bordered.table-condensed
+	thead
+		tr
+			th id
+			th Doclink
+			th Title
+			th Global coord
+			th Parent
+			th Condor
+			th German
+			th Author
+			th width="80" Actions 
+
+	- @docs.each do |d| 
+		tr
+			td= d.id
+			td= d.doclink_ref_num
+			td= d.title
+			td= d.global_coord
+			td= d.parent
+			td= d.condor_ref_num
+			td= d.german_doc_num
+			td= d.author
+			td
+				= link_to "Edit", edit_doc_path(d.id) 
+				= " / " 
+				= link_to "Delete", doc_path(d.id), :method => "delete", :confirm => "Are you sure?"
+
+= will_paginate @docs

@@ -14,6 +14,7 @@ table.table-striped.table-bordered.table-condensed width="100%"
 			th Proposed Version Num
 			th Justification
 			th Description
+			th Actions
 	tbody#all_requests
 		- @requests.each do |request|
 			= render :partial => 'requests/request', :locals => { :request => request }

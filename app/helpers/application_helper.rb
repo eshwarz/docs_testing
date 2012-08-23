@@ -77,6 +77,7 @@ module ApplicationHelper
 		form_label = opts[:label].present? ? form.label(field, opts[:label], :class => 'control-label') : form.label(field, field.to_s.titleize, :class => 'control-label')
 
 		as_field = form.text_field(field, opts) if opts[:as].nil?
+		as_field = form.text_area(field, opts) if opts[:as]== 'textarea'
 		as_field = form.select(field, opts[:collection], { :prompt => opts[:prompt] }, opts.except(:as, :collection, :prompt)) if opts[:as] == :select
 		
 		# radio buttons for collection

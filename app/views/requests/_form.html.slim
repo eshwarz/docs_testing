@@ -29,7 +29,7 @@
 				= bs_f f, :request_type, :as => :select, :collection => Request.request_types, :prompt => 'Request Type', :class => 'mini_field'
 				= bs_f f, :proposed_version_number, :class => 'mini_field'
 				= bs_f f, :justification, :class => 'mini_field'
-				= bs_f f, :description, :class => 'mini_field'
+				= bs_f f, :description, :as => 'textarea', :rows => 0, :class => 'mini_field'
 			.span3
 				= bs_f f, :sites, :class => 'mini_field'
 				= bs_f f, :timeline, :as => :select, :collection => Request.timelines, :prompt => 'Timeline', :class => 'mini_field'
@@ -38,14 +38,14 @@
 				= bs_f f, :commitment_details, :class => 'mini_field'
 				= bs_f f, :superseded_docs, :class => 'mini_field'
 				= bs_f f, :training_impact, :as => :select, :collection => Request.training_impacts, :prompt => 'Training impact', :class => 'mini_field'
-			.span3
 				= bs_f f, :training_strategy, :as => :select, :collection => Request.training_strategys, :prompt => 'Training Strategy', :class => 'mini_field'
+			.span3
 				= bs_f f, :pqs_bmt_date, :class => 'mini_field datepicker', :autocomplete => 'off', :label => 'PQS BMT Date'
 				= bs_f f, :pqs_bmt_decision_rationale, :class => 'mini_field', :label => 'PQS BMT Decision Rationale'
 				= bs_f f, :pqs_ct_date, :class => 'mini_field datepicker', :autocomplete => 'off', :label => 'PQS CT Date'
 				= bs_f f, :pqs_ct_decision_rationale, :class => 'mini_field', :label => 'PQS CT Decision Rationale'
 				= bs_f f, :request_closed_date, :class => 'mini_field datepicker', :autocomplete => 'off'
-				= bs_f f, :comments, :class => 'mini_field'
+				= bs_f f, :comments, :as => 'textarea', :rows => 0, :class => 'mini_field'
 
 
 	div class="modal-footer" id="modal_footer"
