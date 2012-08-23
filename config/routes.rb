@@ -25,6 +25,9 @@ Ptqs::Application.routes.draw do
     match '/home', :action => 'index', :as => 'home'
   end
 
+  controller :docs do
+  end
+
   controller :reports do
     match '/reports', :action => 'index', :as => 'reports'
     get 'reports/group_documents'
