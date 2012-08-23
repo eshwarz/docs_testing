@@ -6,6 +6,14 @@ class DocsController < ApplicationController
 		@docs = Docs.paginate(:page => params[:page], :per_page => 10)
 	end
 
+	def search_docs
+		@filtered = Docs.where("doclink_ref_num LIKE ?","%#{params[:doclink_ref_num]}%")
+		@docs = @filtered.paginate(:page => params[:page], :per_page => 10)
+		respond_to do |format|
+			format.js {}
+		end
+	end
+
 	def new
 		@doc = Docs.new
 	end

@@ -26,6 +26,7 @@ Ptqs::Application.routes.draw do
   end
 
   controller :docs do
+    match '/docs/search_docs', :action => 'search_docs', :as => 'search_docs'
   end
 
   controller :reports do
