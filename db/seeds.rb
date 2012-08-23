@@ -145,8 +145,8 @@ if Timeline.count == 0
 	group_nums = Version.group_nums
 	group_nums.each do |g_num|
 		timeline_types.each do |t|
-			imelines.create( :timeline_type => t, :group_num => g_num )
-			puts "Version timelines seeds for #{index+1}"
+			Timeline.create( :timeline_type => t, :group_num => g_num )
+			puts "Version timelines seeds for #{g_num}"
 		end
 	end
 end
