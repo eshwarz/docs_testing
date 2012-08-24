@@ -1,5 +1,20 @@
 @import 'mixins';
 
+form {
+	input.mini_field, textarea.mini_field {
+		width: 190px !important;
+	}
+	select.mini_field {
+		width: 200px !important;
+	}
+	input.medium_field, textarea.medium_field {
+		width: 190px !important;
+	}
+	select.medium_field {
+		width: 200px !important;
+	}
+}
+
 .modal {
 	form {
 		@include m(0px);

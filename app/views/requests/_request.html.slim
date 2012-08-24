@@ -8,7 +8,8 @@ tr id="request_#{request.id}"
 	td= request.justification
 	td= request.description
 	td.tc
-		= link_to 'Edit', edit_request_path(request.id)+"?docs_id=#{doc.id}#docsModal", :remote => true, "data-toggle" => 'modal', :size => 'large'
+		/ = link_to 'Edit', edit_request_path(request.id)+"?docs_id=#{doc.id}#docsModal", :remote => true, "data-toggle" => 'modal', :size => 'large'
+		= link_to 'Edit', edit_request_path( :id => request.id, :docs_id => doc.id )
 		= " / "
 		= link_to 'Delete', request_path(request.id), :method => 'delete', :confirm => 'Are you sure?', :remote => true
 		button.mls.btn.btn-primary Convert to Request

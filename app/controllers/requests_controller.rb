@@ -30,7 +30,7 @@ class RequestsController < ApplicationController
 
 			respond_to do |format|
 				format.js { render :create }
-				format.html {}
+				format.html { redirect_to edit_doc_path( @doc.id ) }
 			end
 		end
 	end
@@ -47,7 +47,7 @@ class RequestsController < ApplicationController
 
 			respond_to do |format|
 				format.js { render :update }
-				format.html {}
+				format.html { redirect_to edit_doc_path( @doc.id ) }
 			end
 		end
 	end

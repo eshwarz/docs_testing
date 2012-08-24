@@ -1,6 +1,7 @@
 div
 	.fl= will_paginate @requests
-	a class="btn btn-primary fr pagination_link" data-toggle="modal" size="large" href="#docsModal" id="new_request" doc-id="#{doc.id}" New Request
+	/ a class="btn btn-primary fr pagination_link" data-toggle="modal" size="large" href="#docsModal" id="new_request" doc-id="#{doc.id}" New Request
+	= link_to 'New Request', new_request_path( :docs_id => doc.id ), :class => 'btn btn-primary fr pagination_link'
 	.clearfix
 
 

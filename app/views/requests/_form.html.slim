@@ -1,9 +1,10 @@
 - doc_id = params[:docs_id]
 - doc = Docs.find doc_id
 
-= form_for request, :html => { :class => 'form-horizontal' }, :remote => true do |f|
+= form_for request, :html => { :class => 'form-horizontal' } do |f|
 	
-	div class="modal-body" id="modal_body"
+	/ div class="modal-body" id="modal_body"
+	div
 		h3.pagination-centered.well.pas= doc.doclink_ref_num + ' : ' + doc.title
 		.ml70	
 			.row
@@ -22,7 +23,8 @@
 		= hidden_field :request, :docs_id, :value => params[:docs_id]
 		hr
 		.row
-			.span3
+			/ .span3
+			.span4
 				= bs_f f, :requested_by, :class => 'mini_field'
 				= bs_f f, :requested_date, :class => 'mini_field datepicker', :autocomplete => 'off'
 				= bs_f f, :team_sponsor, :class => 'mini_field'
@@ -30,7 +32,8 @@
 				= bs_f f, :proposed_version_number, :class => 'mini_field'
 				= bs_f f, :justification, :class => 'mini_field'
 				= bs_f f, :description, :as => 'textarea', :rows => 0, :class => 'mini_field'
-			.span3
+			/ .span3
+			.span4
 				= bs_f f, :sites, :class => 'mini_field'
 				= bs_f f, :timeline, :as => :select, :collection => Request.timelines, :prompt => 'Timeline', :class => 'mini_field'
 				= bs_f f, :team, :class => 'mini_field'
@@ -39,7 +42,8 @@
 				= bs_f f, :superseded_docs, :class => 'mini_field'
 				= bs_f f, :training_impact, :as => :select, :collection => Request.training_impacts, :prompt => 'Training impact', :class => 'mini_field'
 				= bs_f f, :training_strategy, :as => :select, :collection => Request.training_strategys, :prompt => 'Training Strategy', :class => 'mini_field'
-			.span3
+			/ .span3
+			.span4
 				= bs_f f, :pqs_bmt_date, :class => 'mini_field datepicker', :autocomplete => 'off', :label => 'PQS BMT Date'
 				= bs_f f, :pqs_bmt_decision_rationale, :class => 'mini_field', :label => 'PQS BMT Decision Rationale'
 				= bs_f f, :pqs_ct_date, :class => 'mini_field datepicker', :autocomplete => 'off', :label => 'PQS CT Date'
@@ -48,9 +52,11 @@
 				= bs_f f, :comments, :as => 'textarea', :rows => 0, :class => 'mini_field'
 
 
-	div class="modal-footer" id="modal_footer"
-		a href="#" class="btn" data-dismiss="modal" Close
-		= f.submit 'Save', :class => 'btn btn-primary'
+	/ div class="modal-footer" id="modal_footer"
+	.well
+		/ a href="#" class="btn" data-dismiss="modal" Close
+		= f.submit 'Save', :class => 'btn btn-primary fr'
+		.clearfix
 
 javascript:
 	$('.datepicker').datepicker()
