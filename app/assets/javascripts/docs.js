@@ -5,7 +5,7 @@ $(document).ready(function(){
 		
 		$.ajax({
 			type: 'POST',
-			url: '/docs/search_docs',
+			url: '/docs/index',
 			data: { doclink_ref_num: search_string },
 			cache: false
 		})

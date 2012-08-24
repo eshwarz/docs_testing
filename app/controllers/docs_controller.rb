@@ -3,14 +3,15 @@ class DocsController < ApplicationController
 	before_filter :authenticate_user!
 	
 	def index
-		@docs = Docs.paginate(:page => params[:page], :per_page => 10)
-	end
-
-	def search_docs
-		@filtered = Docs.where("doclink_ref_num LIKE ?","%#{params[:doclink_ref_num]}%")
-		@docs = @filtered.paginate(:page => params[:page], :per_page => 10)
+		if params[:doclink_ref_num]
+			@filtered = Docs.where("doclink_ref_num LIKE ?","%#{params[:doclink_ref_num]}%")
+			@docs = @filtered.paginate(:page => params[:page], :per_page => 10)
+		else
+			@docs = Docs.paginate(:page => params[:page], :per_page => 10)
+		end
 		respond_to do |format|
 			format.js {}
+			format.html {}
 		end
 	end
 
