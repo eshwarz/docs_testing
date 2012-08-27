@@ -2,8 +2,9 @@
 - doc = Docs.find doc_id
 
 
-= form_for version, :html => { :class => 'form-horizontal' }, :remote => true do |f|
-	div class="modal-body" id="modal_body"
+= form_for version, :html => { :class => 'form-horizontal' } do |f|
+	/ div class="modal-body" id="modal_body"
+	div
 		h3.pagination-centered.well.pas= doc.doclink_ref_num + ' : ' + doc.title
 		.ml70	
 			.row
@@ -61,9 +62,13 @@
 
 		.mtl
 
-	div class="modal-footer" id="modal_footer"
-		a href="#" class="btn" data-dismiss="modal" Close
-		= f.submit 'Save', :class => 'btn btn-primary'
+	/ div class="modal-footer" id="modal_footer"
+	.well
+		/ a href="#" class="btn" data-dismiss="modal" Close
+		.fr
+			= f.submit 'Save', :class => 'btn btn-primary'
+			= link_to 'Cancel', edit_doc_path(doc_id), :class => 'btn btn-secondary mlm'
+		.clearfix
 
 javascript:
 	$('.datepicker').datepicker()

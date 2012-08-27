@@ -1,6 +1,8 @@
 div
 	.fl= will_paginate @versions
-	a class="btn btn-primary fr pagination_link" data-toggle="modal" href="#docsModal" id="new_version" doc-id="#{doc.id}" size="large" New Version
+	/ a class="btn btn-primary fr pagination_link" data-toggle="modal" href="#docsModal" id="new_version" doc-id="#{doc.id}" size="large" New Version
+	= link_to 'New Version', new_version_path( :docs_id => doc.id ), :class => 'btn btn-primary fr pagination_link'
+
 .clearfix
 
 

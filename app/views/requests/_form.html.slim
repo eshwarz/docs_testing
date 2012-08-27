@@ -55,7 +55,10 @@
 	/ div class="modal-footer" id="modal_footer"
 	.well
 		/ a href="#" class="btn" data-dismiss="modal" Close
-		= f.submit 'Save', :class => 'btn btn-primary fr'
+		.fr
+			= f.submit 'Save', :class => 'btn btn-primary'
+			= link_to 'Cancel', edit_doc_path(doc_id), :class => 'btn btn-secondary mlm'
+
 		.clearfix
 
 javascript:

@@ -22,11 +22,11 @@ class RequestsController < ApplicationController
 		if params and params[:request]
 			@request = Request.create params[:request]
 			@doc = @request.docs
-      if @request
-      	flash[:notice] = "Request created !"
-      else
-      	flash[:error] = "Request not created !"
-      end
+			if @request
+				flash[:notice] = "Request created !"
+			else
+				flash[:error] = "Request not created !"
+			end
 
 			respond_to do |format|
 				format.js { render :create }
@@ -39,11 +39,11 @@ class RequestsController < ApplicationController
 		if params and params[:request]
 			@doc = @request.docs
 			@updated = @request.update_attributes params[:request]
-      if @updated
-      	flash[:notice] = "Request updated !"
-      else
-      	flash[:error] = "Request not updated !"
-      end
+			if @updated
+				flash[:notice] = "Request updated !"
+			else
+				flash[:error] = "Request not updated !"
+			end
 
 			respond_to do |format|
 				format.js { render :update }
