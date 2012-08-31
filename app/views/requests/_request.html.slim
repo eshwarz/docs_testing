@@ -12,4 +12,4 @@ tr id="request_#{request.id}"
 		= link_to 'Edit', edit_request_path( :id => request.id, :docs_id => doc.id )
 		= " / "
 		= link_to 'Delete', request_path(request.id), :method => 'delete', :confirm => 'Are you sure?', :remote => true
-		= link_to 'Convert to Request', convert_to_version_path( request.id ), :class => 'btn btn-primary mls'
+		= link_to 'Convert to Request', convert_to_version_path( request.id ), :class => 'btn btn-primary btn-mini mls'

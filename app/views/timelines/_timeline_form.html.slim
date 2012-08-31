@@ -1,0 +1,11 @@
+/ = @timeline_ids[g]
+/ hr
+/ = @timelines
+
+- @timelines = Timeline.find @timeline_ids[g]
+
+= form_for :timeline, :url => update_multiple_timelines_path, :html => { :method => 'put', :class => 'form-horizontal' }, :remote => true do |f|
+	- for timeline in @timelines
+		= fields_for timeline do |t|
+			= bs_f t, :date, :label => timeline.timeline_type, :class => 'datepicker'
+	= f.submit 'Save', :class => 'btn btn-primary'

@@ -1,0 +1,19 @@
+.row
+	.span2
+		.well.pan.mbs
+			h4 Select Group Number
+		.tabbable
+			ul.nav.nav-pills.nav-stacked
+				- @group_nums.each do |g|
+					li
+						= link_to g, "##{g}", "data-toggle" => "tab"
+	.span10
+		.tab-content
+			.tab-pane.active
+				.well.pan
+					h3 Select Group Number form the left Pane
+			- @group_nums.each do |g|
+				div id="#{g}" class="tab-pane"
+					.well.pan
+						h3 Timelines for the group number &quot;#{g}&quot;
+					= render :partial => 'timeline_form', :locals => { :g => g }

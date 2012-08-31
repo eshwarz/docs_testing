@@ -4,9 +4,16 @@ class TimelinesController < ApplicationController
 	before_filter :find_timeline
 
 	def index
-		if params[:version_id]
-			@version = Version.find params[:version_id]
-			@timelines = @version.timelines.paginate(:page => params[:page], :per_page => 10)
+		timeline_ids = {}
+		@group_nums = Version.group_nums
+		@group_nums.each do |g|
+			timeline_ids[g] = Timeline.where( :group_num => g ).map{ |g| g.id }
+		end
+		@timeline_ids = timeline_ids
+		# @timelines = Timeline.find params[:timeline_ids]
+		respond_to do |format|
+			format.js {}
+			format.html {}
 		end
 	end
 
@@ -59,6 +66,19 @@ class TimelinesController < ApplicationController
 				flash[:error] = "Timeline not deleted!"
 			end
 		end	
+	end
+
+
+	def update_multiple
+		@timelines = Timeline.find params[:timeline_ids]
+		@timelines.each do |t|
+			t.update_attributes params[:timeline]
+		end
+		flash[:notice] = 'Updated Timelines!'
+		
+		respond_to do |format|
+			format.js {}
+		end
 	end
 
 	private

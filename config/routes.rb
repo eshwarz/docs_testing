@@ -18,7 +18,12 @@ Ptqs::Application.routes.draw do
   resources :requests
   resources :mappings
   resources :issues
-  resources :timelines
+  resources :timelines do
+    collection do 
+      post :index
+      put :update_multiple
+    end
+  end
 
   controller :home do
     # match '/reports', :action => 'reports', :as => 'reports'
