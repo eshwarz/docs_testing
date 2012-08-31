@@ -2,7 +2,10 @@
 	.well style="padding: 5px; "
 		.pull-left.mts
 			h4 style="margin: 0;"
-				= doc.doclink_ref_num + " : " + doc.title
+				- if doc.id.present?
+					= doc.doclink_ref_num + " : " + doc.title
+				- else
+					= 'New Document'
 		.pull-right
 			= f.submit 'Save', :class => 'btn btn-primary'
 			= link_to 'Cancel', docs_index_path, :class => 'mls btn'

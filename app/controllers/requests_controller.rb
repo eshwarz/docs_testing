@@ -62,6 +62,27 @@ class RequestsController < ApplicationController
 		end
 	end
 
+	def convert_to_version
+		if @request
+			@doc = @request.docs
+			
+			Version.create( 
+											:docs_id => @doc.id, 
+											:group_num => @request.timeline, 
+											:version_number => @request.proposed_version_number, 
+											:comment => @request.comments, 
+											:description_of_change => @request.description 
+										)
+			@request.delete
+
+			flash[:notice] = "Request converted to version!"
+			redirect_to edit_doc_path( @doc.id )
+		else
+			flash[:error] = "Request not converted to version!"
+			redirect_to root_path
+		end
+	end
+
 	private
 	def find_request
 		@request = Request.find(params[:id]) if params[:id]

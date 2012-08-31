@@ -29,6 +29,10 @@ Ptqs::Application.routes.draw do
     match '/docs/index'
   end
 
+  controller :requests do
+    match '/requests/convert/:id', :action => 'convert_to_version', :as => 'convert_to_version'
+  end
+
   controller :reports do
     match '/reports', :action => 'index', :as => 'reports'
     get 'reports/group_documents'
