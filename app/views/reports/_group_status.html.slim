@@ -1,16 +1,15 @@
 div style="min-height: 500px;"
-	.well.form-search
-
+	.form-search.fl
 		ul class="nav nav-pills no_margin"
 			
-			li class="dropdown" id="menu2" style="width: 100%"
+			li class="dropdown" id="menu2"
 				a.dropdown-toggle data-toggle="dropdown" href="#menu2"
 					|Select Group Number
-					b class="caret"
+					b class="caret mlm"
 
-				ul class="dropdown-menu" style="width: 100%"
+				ul class="dropdown-menu"
 					- @group_numbers.each do |g|
 						li
-							= link_to g, reports_group_status_path(:group_num => g), :remote => true
+							= link_to 'Group Number "'+g+'"', reports_group_status_path(:group_num => g), :remote => true
 
 	#group_status_results

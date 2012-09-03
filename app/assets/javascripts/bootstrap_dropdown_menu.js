@@ -2,7 +2,7 @@ $(document).ready(function(){
 	
 	$('.dropdown-menu li a').click(function(){
 		
-		var link_text = $(this).html() + "<b class='caret'></b>"
+		var link_text = $(this).html() + "<b class='caret mlm'></b>"
 		li_id = $(this).closest('ul').closest('li').attr('id')
 		var dropdown_select = $("#"+li_id+" a[data-toggle='dropdown']")
 		

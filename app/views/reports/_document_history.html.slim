@@ -1,0 +1,12 @@
+div style="min-height: 500px;"
+	.form-search
+		= text_field 'search', 'document_versions', :placeholder => 'Search By Document Number', 'data-provide' => 'typeahead', :class => 'filter_document_nums', :style => 'width: 151px;'
+
+	#document_history_results
+
+javascript:
+	var collection = [#{@doclink_ref_nums.map { |d| "'" + d.to_s + "'" }.join(', ')}];
+
+	$('.filter_document_nums').typeahead({
+		source: collection
+	})

@@ -1,0 +1,25 @@
+.mtm
+	- if @results.count > 0
+		= will_paginate @results, :remote => true
+
+		table.table-striped.table-bordered.table-condensed width="100%"
+			thead
+				th Doclink Ref Num
+				th Condor Ref Num
+				th Title
+				th Group Number
+				th Version Number
+				th Description of Change
+			tbody
+				- @results.each do |r|
+					tr
+						td= r.docs.doclink_ref_num
+						td= r.docs.condor_ref_num
+						td= r.docs.title
+						td= r.group_num
+						td= r.version_number
+						td= r.description_of_change
+
+		= will_paginate @results, :remote => true
+	- else
+		h3 No results for the selected Document.
