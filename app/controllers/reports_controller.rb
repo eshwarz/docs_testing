@@ -52,4 +52,36 @@ class ReportsController < ApplicationController
 		end
 	end
 
+	def pqs_matrix
+		# results
+		@versions = []
+		Docs.all.each do |d|
+			@version = d.versions.order('created_at DESC').limit(1)
+			@versions << @version[0] if @version.count > 0
+		end
+		@results = @versions.paginate( :page => params[:page], :per_page => 20 )
+		
+		respond_to do |format|
+			format.js {}
+		end
+	end
+
+	def onhold_report
+		# results
+		@results = Version.where( :lia_status => "On hold" ).paginate( :page => params[:page], :per_page => 20 )
+		
+		respond_to do |format|
+			format.js {}
+		end
+	end
+
+	def open_requests
+		# results
+		@results = Request.where( :request_closed_date => nil ).paginate( :page => params[:page], :per_page => 20 )
+		
+		respond_to do |format|
+			format.js {}
+		end
+	end
+
 end

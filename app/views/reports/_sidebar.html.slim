@@ -7,11 +7,11 @@
 		li
 			a href="#document_history" data-toggle="tab" Document History
 		li
-			a href="#pqs_matrix" data-toggle="tab" PQS Matrix
+			= link_to 'PQS Matrix', pqs_matrix_path+'#pqs_matrix', 'data-toggle' => 'tab', :remote => 'true'
 		li
-			a href="#onhold_report" data-toggle="tab" On Hold Report
+			= link_to 'On Hold Report', onhold_report_path+'#onhold_report', 'data-toggle' => 'tab', :remote => 'true'
 		li
-			a href="#open_requests" data-toggle="tab" Open Requests
+			= link_to 'Open Requests', open_requests_path+'#open_requests', 'data-toggle' => 'tab', :remote => 'true'
 		li
 			a href="#document_hierarchy" data-toggle="tab" Document Hierarchy
 		li
