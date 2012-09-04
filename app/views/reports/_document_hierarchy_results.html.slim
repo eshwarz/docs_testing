@@ -1,0 +1,23 @@
+.mtm
+	- if @results.count > 0
+		= will_paginate @results, :remote => true
+
+		table.table-striped.table-bordered.table-condensed width="100%"
+			thead
+				th Doclink Ref Num
+				th Condor Ref Num
+				th Parent
+				th Title
+				th Author
+			tbody
+				- @results.each do |r|
+					tr
+						td= r.doclink_ref_num
+						td= r.condor_ref_num
+						td= r.parent
+						td= r.title
+						td= r.author
+
+		= will_paginate @results, :remote => true
+	- else
+		h3 No results for the selected Document.

@@ -46,6 +46,7 @@ Ptqs::Application.routes.draw do
     match 'reports/pqs_matrix', :action => 'pqs_matrix', :as => 'pqs_matrix'
     match 'reports/onhold_report', :action => 'onhold_report', :as => 'onhold_report'
     match 'reports/open_requests', :action => 'open_requests', :as => 'open_requests'
+    match 'reports/document_hierarchy', :action => 'document_hierarchy', :as => 'document_hierarchy'
   end
 
   controller :devise_checker do

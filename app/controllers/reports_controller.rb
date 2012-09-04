@@ -7,6 +7,7 @@ class ReportsController < ApplicationController
 	def index
 		@group_numbers = Version.group_nums
 		@doclink_ref_nums = Docs.all.map { |d| d.doclink_ref_num }
+		@parents = Docs.all.map { |d| d.parent }.uniq
 	end
 
 	def group_documents
@@ -81,6 +82,20 @@ class ReportsController < ApplicationController
 		
 		respond_to do |format|
 			format.js {}
+		end
+	end
+
+	def document_hierarchy
+		if params and params[:parent]
+			@parent = params[:parent]
+			
+			# results
+			@results = Docs.where(:parent => @parent).paginate( :page => params[:page], :per_page => 20 )
+			
+			respond_to do |format|
+				format.js {}
+			end
+
 		end
 	end
 

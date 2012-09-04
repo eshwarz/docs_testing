@@ -1,0 +1,12 @@
+div style="min-height: 500px;"
+	.form-search
+		= text_field 'search', 'document_hierarchy', :placeholder => 'Search By Document Number', 'data-provide' => 'typeahead', :class => 'filter_parents', :style => 'width: 151px;'
+
+	#document_hierarchy_results
+
+javascript:
+	var collection = [#{@parents.map { |d| "'" + d.to_s + "'" }.join(', ')}];
+
+	$('.filter_parents').typeahead({
+		source: collection
+	})
