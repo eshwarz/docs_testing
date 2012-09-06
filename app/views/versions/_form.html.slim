@@ -49,16 +49,9 @@
 			
 			.span5
 				h3.pagination-centered.well.pas.mhn Timelines
-				= bs_f f, :final_draft_pqs_bmt, :class => 'datepicker', :label => 'Final draft to PQS BMT'
-				= bs_f f, :tech_review, :class => 'datepicker', :label => 'Tech review period'
-				= bs_f f, :out_for_stakeholder_review, :class => 'datepicker', :label => 'Out for stakeholder review'
-				= bs_f f, :stakeholder_review_ends, :class => 'datepicker', :label => 'Stakeholder review ends'
-				= bs_f f, :author_adjudication, :class => 'datepicker', :label => 'Author adjudication complete'
-				= bs_f f, :pqs_ct_ou_review, :class => 'datepicker', :label => 'To PQS CT for OU review'
-				= bs_f f, :ou_review_complete, :class => 'datepicker', :label => 'OU review complete'
-				= bs_f f, :ou_review_mtg, :class => 'datepicker', :label => 'OU review mtg'
-				= bs_f f, :approval, :class => 'datepicker', :label => 'Approval'
-				= bs_f f, :effective_lia_due, :class => 'datepicker', :label => 'Effective and LIA due'
+				- unless @timelines.nil?
+					- @timelines.each do |t|
+						= beautify_params t.timeline_type, t.date
 
 		.mtl
 

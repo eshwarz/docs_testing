@@ -13,7 +13,7 @@ class VersionsController < ApplicationController
 
 	def edit
 		@issues = @version.issues
-		@timelines = @version.timelines
+		@timelines = Timeline.where( :group_num => @version.group_num )
 		respond_to do |format|
 			format.js { render :edit }
 			format.html {}
