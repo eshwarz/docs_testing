@@ -18,7 +18,20 @@
 #
 
 class Docs < ActiveRecord::Base
+
+	# validations
+	validates :doclink_ref_num, :uniqueness => true
+
 	has_many :versions
 	has_many :requests
 	has_many :mappings
+
+	def self.training_types
+		['R&U', 'WBT', 'ILT']
+	end
+
+	def self.chapter_names
+		['Mgmt Responsibility', 'System Elements', 'Operations', 'Enablers']
+	end
+
 end

@@ -1,4 +1,4 @@
-= form_for doc, :html => { :class => 'form-horizontal' } do |f|
+= form_for doc, :action => 'create', :html => { :class => 'form-horizontal' } do |f|
 	.well style="padding: 5px; "
 		.pull-left.mts
 			h4 style="margin: 0;"
@@ -20,7 +20,7 @@
 		.span5
 			= bs_f f, :german_doc_num
 			= bs_f f, :author
-			= bs_f f, :chapter_name
-			= bs_f f, :training_type
+			= bs_f f, :chapter_name, as: :select, :collection => Docs.chapter_names, :prompt => 'Select Chapter Name'
+			= bs_f f, :training_type, as: :select, :collection => Docs.training_types, :prompt => 'Select Training Type'
 			= bs_f f, :comments, :as => 'textarea', :rows => 0
 		.clearfix

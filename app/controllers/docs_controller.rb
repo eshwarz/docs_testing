@@ -21,9 +21,13 @@ class DocsController < ApplicationController
 
 	def create
 		if params and params[:docs]
-			Docs.create params[:docs]
-  	end
-  	redirect_to docs_index_path
+			@docs = Docs.new params[:docs]
+			if @docs.errors.count > 0
+				# redirect_to new_doc_path
+			else
+				#	 redirect_to docs_path
+			end
+		end
 	end
 
 	def reports
