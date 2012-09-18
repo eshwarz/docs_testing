@@ -1,7 +1,7 @@
 Ptqs::Application.routes.draw do
   
-  get "docs/index"
-  get "docs/reports"
+  # match "docs/index"
+  # match "docs/reports"
 
   ActiveAdmin.routes(self)
 
@@ -30,8 +30,12 @@ Ptqs::Application.routes.draw do
     match '/home', :action => 'index', :as => 'home'
   end
 
-  controller :docs do
-    match '/docs/index'
+  # controller :docs do
+  #   match '/docs/reports', :as => 'docs_reports'
+  # end
+
+  controller :versions do
+    match '/get_timelines', :action => 'get_timelines', :as => 'get_timelines'
   end
 
   controller :requests do

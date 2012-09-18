@@ -29,7 +29,7 @@ end
 #  comment       :text
 #  created_at    :datetime        not null
 #  updated_at    :datetime        not null
-#  version_id    :integer
 #  timeline_type :string(255)
+#  group_num     :string(255)
 #
 

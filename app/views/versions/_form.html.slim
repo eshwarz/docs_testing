@@ -49,9 +49,26 @@
 			
 			.span5
 				h3.pagination-centered.well.pas.mhn Timelines
-				- unless @timelines.nil?
-					- @timelines.each do |t|
-						= beautify_params t.timeline_type, t.date
+				.normal_timelines
+					- unless @timelines.nil?
+						- @timelines.each do |t|
+							= beautify_params t.timeline_type, t.date
+				.special_timelines.hide
+					= bs_f f, :final_draft_pqs_bmt, :class => 'datepicker'
+					= bs_f f, :tech_review, :class => 'datepicker'
+					= bs_f f, :out_for_stakeholder_review, :class => 'datepicker'
+					= bs_f f, :stakeholder_review_ends, :class => 'datepicker'
+					= bs_f f, :author_adjudication, :class => 'datepicker'
+					= bs_f f, :pqs_ct_ou_review, :class => 'datepicker'
+					= bs_f f, :ou_review_complete, :class => 'datepicker'
+					= bs_f f, :ou_review_mtg, :class => 'datepicker'
+					= bs_f f, :approval, :class => 'datepicker'
+					= bs_f f, :effective_lia_due, :class => 'datepicker'
+					= bs_f f, :bio_ou_comment, :class => 'datepicker'
+					= bs_f f, :sm_ou_comment, :class => 'datepicker'
+					= bs_f f, :cmo_ou_comment, :class => 'datepicker'
+					= bs_f f, :ptd_ou_comment, :class => 'datepicker'
+					= bs_f f, :other_ou_comment, :class => 'datepicker'
 
 		.mtl
 
@@ -65,3 +82,4 @@
 
 javascript:
 	$('.datepicker').datepicker()
+	

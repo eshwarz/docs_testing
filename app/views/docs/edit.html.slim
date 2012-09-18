@@ -3,7 +3,8 @@
 = render :partial => 'doc_navigation', :locals => { :doc => doc }
 
 .row.mtm
-	= render :partial => 'form', :locals => { :doc => doc }
+	= form_for doc, :html => { :class => 'form-horizontal' } do |f|
+		= render :partial => 'form', :locals => { :doc => doc, :f => f }
 .row
 	.tabbable
 		ul.nav.nav-tabs

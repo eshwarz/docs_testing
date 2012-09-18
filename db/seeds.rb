@@ -143,6 +143,7 @@ end
 if Timeline.count == 0
 	timeline_types = Timeline.timeline_types
 	group_nums = Version.group_nums
+	group_nums.pop # removing special option from array
 	group_nums.each do |g_num|
 		timeline_types.each do |t|
 			Timeline.create( :timeline_type => t, :group_num => g_num )

@@ -1,0 +1,7 @@
+- if model_name.errors.any? 
+	#error_explanation.alert.alert-error
+		| The form contains 
+		= pluralize(model_name.errors.count, "error")
+		ul
+			- model_name.errors.full_messages.each do |msg|
+				li = msg

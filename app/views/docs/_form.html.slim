@@ -1,26 +1,27 @@
-= form_for doc, :action => 'create', :html => { :class => 'form-horizontal' } do |f|
-	.well style="padding: 5px; "
-		.pull-left.mts
-			h4 style="margin: 0;"
-				- if doc.id.present?
-					= doc.doclink_ref_num + " : " + doc.title
-				- else
-					= 'New Document'
-		.pull-right
-			= f.submit 'Save', :class => 'btn btn-primary'
-			= link_to 'Cancel', docs_index_path, :class => 'mls btn'
-		.clearfix
-	.row
-		.span5
-			= bs_f f, :doclink_ref_num
-			= bs_f f, :title
-			= bs_f f, :global_coord
-			= bs_f f, :parent
-			= bs_f f, :condor_ref_num
-		.span5
-			= bs_f f, :german_doc_num
-			= bs_f f, :author
-			= bs_f f, :chapter_name, as: :select, :collection => Docs.chapter_names, :prompt => 'Select Chapter Name'
-			= bs_f f, :training_type, as: :select, :collection => Docs.training_types, :prompt => 'Select Training Type'
-			= bs_f f, :comments, :as => 'textarea', :rows => 0
-		.clearfix
+/ = form_for doc, :url => docs_path(:id => doc.id), :method => "#{doc.id.present? ? 'put' : 'post'}", :html => { :class => 'form-horizontal' } do |f|
+= render 'shared/error_messages', :model_name => doc
+.well style="padding: 5px;"
+	.pull-left.mts
+		h4 style="margin: 0;"
+			- if doc.id.present?
+				= doc.doclink_ref_num + " : " + doc.title
+			- else
+				= 'New Document'
+	.pull-right
+		= f.submit 'Save', :class => 'btn btn-primary'
+		= link_to 'Cancel', docs_path, :class => 'mls btn'
+	.clearfix
+.row
+	.span5
+		= bs_f f, :doclink_ref_num
+		= bs_f f, :title
+		= bs_f f, :global_coord
+		= bs_f f, :parent
+		= bs_f f, :condor_ref_num
+	.span5
+		= bs_f f, :german_doc_num
+		= bs_f f, :author
+		= bs_f f, :chapter_name, as: :select, :collection => Docs.chapter_names, :prompt => 'Select Chapter Name'
+		= bs_f f, :training_type, as: :select, :collection => Docs.training_types, :prompt => 'Select Training Type'
+		= bs_f f, :comments, :as => 'textarea', :rows => 0
+	.clearfix

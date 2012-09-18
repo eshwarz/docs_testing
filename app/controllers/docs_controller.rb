@@ -20,14 +20,14 @@ class DocsController < ApplicationController
 	end
 
 	def create
-		if params and params[:docs]
-			@docs = Docs.new params[:docs]
-			if @docs.errors.count > 0
-				# redirect_to new_doc_path
-			else
-				#	 redirect_to docs_path
+		if params && params[:docs]
+			@doc = Docs.new params[:docs]
+			if @doc.save
+		  	redirect_to docs_path
+		  else
+		  	redirect_to new_doc_path
 			end
-		end
+  	end
 	end
 
 	def reports
@@ -43,13 +43,18 @@ class DocsController < ApplicationController
 	def update
 		if params[:id]
 			@doc = Docs.find params[:id]
-			@doc.update_attributes params[:docs]
-			redirect_to docs_index_path
+			if @doc.update_attributes params[:docs]
+				redirect_to docs_path
+			else
+				redirect_to edit_doc_path(@doc)
+			end
 		end
 	end
 
 	def destroy
-		@doc = Docs.find(params[:id])
+		@doc = Docs.find(params[:id]).delete
+		redirect_to docs_path
+
 	end
 
 end

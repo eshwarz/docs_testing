@@ -64,6 +64,13 @@ class VersionsController < ApplicationController
 		end
 	end
 
+	def get_timelines
+		@timelines = Timeline.where( :group_num => params[:group_num] )
+		respond_to do |format|
+			format.js {}
+		end		
+	end
+
 	private
 	def find_version
 		@version = Version.find(params[:id]) if params[:id]

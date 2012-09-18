@@ -19,13 +19,15 @@
 
 class Docs < ActiveRecord::Base
 
-	# validations
-	validates :doclink_ref_num, :uniqueness => true
 
 	has_many :versions
 	has_many :requests
 	has_many :mappings
 
+	# validations
+	validates :doclink_ref_num, :presence => true, :uniqueness => true
+	validates :title, :presence => true
+	
 	def self.training_types
 		['R&U', 'WBT', 'ILT']
 	end

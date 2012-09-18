@@ -38,16 +38,36 @@ end
 #
 # Table name: versions
 #
-#  id                    :integer         not null, primary key
-#  docs_id               :integer
-#  group_num             :string(255)
-#  version_number        :integer
-#  comment               :text
-#  description_of_change :text
-#  capa_number           :integer
-#  revision_type         :string(255)
-#  created_at            :datetime        not null
-#  updated_at            :datetime        not null
-#  lia_status            :string(255)
+#  id                         :integer         not null, primary key
+#  docs_id                    :integer
+#  group_num                  :string(255)
+#  version_number             :integer
+#  comment                    :text
+#  description_of_change      :text
+#  capa_number                :integer
+#  revision_type              :string(255)
+#  created_at                 :datetime        not null
+#  updated_at                 :datetime        not null
+#  lia_status                 :string(255)
+#  bio_ou                     :boolean
+#  sm_ou                      :boolean
+#  cmo_ou                     :boolean
+#  ptd_ou                     :boolean
+#  other_ou                   :boolean
+#  final_draft_pqs_bmt        :date
+#  tech_review                :date
+#  out_for_stakeholder_review :date
+#  stakeholder_review_ends    :date
+#  author_adjudication        :date
+#  pqs_ct_ou_review           :date
+#  ou_review_complete         :date
+#  ou_review_mtg              :date
+#  approval                   :date
+#  effective_lia_due          :date
+#  bio_ou_comment             :text
+#  sm_ou_comment              :text
+#  cmo_ou_comment             :text
+#  ptd_ou_comment             :text
+#  other_ou_comment           :text
 #
 
