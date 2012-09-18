@@ -70,9 +70,9 @@ class TimelinesController < ApplicationController
 
 
 	def update_multiple
-		@timelines = Timeline.find params[:timeline_ids]
-		@timelines.each do |t|
-			t.update_attributes params[:timeline]
+		timelines = params[:timeline]
+		timelines.each do |k,v|
+			Timeline.find(k).update_attributes( :date => v )
 		end
 		flash[:notice] = 'Updated Timelines!'
 		
