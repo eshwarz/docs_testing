@@ -2,7 +2,7 @@ module ApplicationHelper
 
 	def beautify_params key, value = nil, key_width = 200, opts = {}
 		contents = content_tag(
-				'b', key, :class => "fl #{opts[:key_class]}", :style => "width:#{key_width}px; #{opts[:key_style]}"
+				'span', key, :class => "fl #{opts[:key_class]}", :style => "width:#{key_width}px; #{opts[:key_style]}"
 			) + content_tag(
 				'div', value.present? ? value : ' - '.html_safe, :class => "light_text #{opts[:value_class]}", :style => "margin-left:#{key_width+10}px;  #{opts[:value_style]}"
 			)

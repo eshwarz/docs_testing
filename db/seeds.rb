@@ -16,7 +16,7 @@ end
 require 'spreadsheet'
 # Parsing documents spreadsheet and seeding it
 if Docs.count == 0
-	num = 2
+	num = 20
 	Spreadsheet.open('db/documents.xls') do |book|
 		book.worksheet('owssvr').each_with_index do |row, index|
 			break if row[0].nil?

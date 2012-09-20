@@ -94,3 +94,16 @@ ul.floated {
 .ml70 {
 	@include ml(70px);
 }
+
+
+.params_extra_margin {
+	.beautify_params {
+		margin-bottom: 30px !important;
+		span {
+			text-align: right;
+		}
+		.light_text {
+			margin-left: 230px !important;
+		}
+	}
+}

@@ -8,12 +8,12 @@
 		h3.pagination-centered.well.pas= doc.doclink_ref_num + ' : ' + doc.title
 		.ml70	
 			.row
-				.span4
+				.span5
 					= beautify_params 'doclink_ref_num'.humanize, doc.doclink_ref_num
 					= beautify_params 'global_coord'.humanize, doc.global_coord
 					= beautify_params 'parent'.humanize, doc.parent
 					= beautify_params 'condor_ref_num'.humanize, doc.condor_ref_num
-				.span4
+				.span6.no_margin
 					= beautify_params 'german_doc_num'.humanize, doc.german_doc_num
 					= beautify_params 'author'.humanize, doc.author
 					= beautify_params 'chapter_name'.humanize, doc.chapter_name
@@ -22,19 +22,19 @@
 		hr
 
 		.row.mts
-			.span4
+			.span6
 				= hidden_field :version, :docs_id, :value => doc_id
 				= bs_f f, :group_num, :as => :select, :collection => Version.group_nums, :prompt => 'Select Group Number'
 				= bs_f f, :version_number
 				= bs_f f, :lia_status, :as => :select, :collection => Version.lia_statuses, :prompt => 'Select LIA status', :label => 'LIA Status'
 				= bs_f f, :comment, :as => 'textarea', :rows => 0
-			.span4.ml70
+			.span6
 				= bs_f f, :description_of_change, :as => 'textarea', :rows => 0
 				= bs_f f, :capa_number, :label => 'CAPA Number'
 				= bs_f f, :revision_type, :as => :select, :collection => Version.revision_types, :prompt => 'Select Revision Type'
 
 		.row
-			.span4
+			.span6
 				h3.pagination-centered.well.pas.mhn Issues
 				= bs_f f, :bio_ou, :as => :radio, :collection => bool, :align => 'horizontal', :label => 'BIO OU'
 				= bs_f f, :bio_ou_comment, :class => 'mini_field'
@@ -47,13 +47,13 @@
 				= bs_f f, :other_ou, :as => :radio, :collection => bool, :align => 'horizontal', :label => 'Other OU'
 				= bs_f f, :other_ou_comment, :class => 'mini_field'
 			
-			.span5
+			.span6.params_extra_margin
 				h3.pagination-centered.well.pas.mhn Timelines
-				.normal_timelines
+				.normal_timelines.mll
 					- unless @timelines.nil?
 						- @timelines.each do |t|
 							= beautify_params t.timeline_type, t.date
-				.special_timelines.hide
+				.special_timelines.mll.hide
 					= bs_f f, :final_draft_pqs_bmt, :class => 'datepicker'
 					= bs_f f, :tech_review, :class => 'datepicker'
 					= bs_f f, :out_for_stakeholder_review, :class => 'datepicker'
