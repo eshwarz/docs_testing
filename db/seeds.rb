@@ -16,12 +16,13 @@ end
 require 'spreadsheet'
 # Parsing documents spreadsheet and seeding it
 if Docs.count == 0
-	num = 20
+	num = 2
 	Spreadsheet.open('db/documents.xls') do |book|
 		book.worksheet('owssvr').each_with_index do |row, index|
 			break if row[0].nil?
 			next if index == 0
-			Docs.create( :doclink_ref_num => row[1], :parent => row[0], :condor_ref_num => row[2], :german_doc_num => row[3],  :title => row[5] )
+			doc = Docs.create( :doclink_ref_num => row[1], :parent => row[0], :condor_ref_num => row[2], :german_doc_num => row[3],  :title => row[5] )
+			doc.versions.create( :version_number => 1 )
 			puts "Record #{index} inserted"
 		end
 	end

@@ -6,6 +6,7 @@ class TimelinesController < ApplicationController
 	def index
 		timeline_ids = {}
 		@group_nums = Version.group_nums
+		@group_nums.pop # removing special from group numbers
 		@group_nums.each do |g|
 			timeline_ids[g] = Timeline.where( :group_num => g ).map{ |g| g.id }
 		end
