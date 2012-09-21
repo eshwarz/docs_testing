@@ -7,6 +7,15 @@ if AuthenticationType.count == 0
 	end
 end
 
+if Rails.env.test?
+	# creating test user in test env
+	if User.count == 0
+		if User.create( :first_name => 'Test', :last_name => 'User', :email => 'test_user@example.com', :password => 'password', :password_confirmation => 'password' )
+			puts "Creating Test user"
+		end
+	end
+end
+
 # Creating an admin user
 if AdminUser.count == 0
 	puts "Creating Admin account"

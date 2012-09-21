@@ -8,7 +8,9 @@ Ptqs::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   match '/auth/:provider/callback' => 'authentications#create'
 
-  devise_for :users, :controllers => { :registrations => 'registrations' } do
+  devise_for :users, :controllers => { :registrations => 'registrations' }
+  
+  devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy' # added this becaause of sign_out bug.
   end
 

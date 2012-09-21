@@ -14,7 +14,7 @@
 					= f.check_box :remember_me, :class => 'fl'
 					= f.label :remember_me, :class => 'fl mls light_text'
 
-				= f.submit "Sign in", :class => 'btn btn-primary fr'
+				= f.submit "Sign in", :class => 'btn btn-primary fr', :id => 'user_sign_in'
 				.clearfix
 
 				= render :partial => 'devise/shared/links'

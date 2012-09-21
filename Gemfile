@@ -21,7 +21,7 @@ gem "meta_search", '>= 1.1.0.pre'     # Used in admin dashboard, for searching w
 gem 'annotate', '~> 2.4.1.beta'
 gem 'spreadsheet'
 gem 'bootstrap-will_paginate'
-
+gem 'autotest-rails'
 
 group :development, :test do                
   gem "haml-rails", ">= 0.3.4"                # templating engine for views
@@ -47,8 +47,4 @@ end
 
 group :production do
   gem 'pg'                                    # Production database is PostgresSQL.
-end  
-
-
-
-
+end
