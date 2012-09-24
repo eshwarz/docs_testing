@@ -17,6 +17,9 @@ module NavigationHelpers
     when /oauth\/authorize/
       outh_authorize_path
 
+    when /docs\/new/
+      new_doc_path
+
     when /reports/
       reports_path
 

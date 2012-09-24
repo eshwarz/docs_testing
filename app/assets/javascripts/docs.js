@@ -4,8 +4,8 @@ $(document).ready(function(){
 		var search_string = $(this).val()
 		
 		$.ajax({
-			type: 'POST',
-			url: '/docs/index',
+			type: 'GET',
+			url: '/docs',
 			data: { doclink_ref_num: search_string },
 			cache: false
 		})

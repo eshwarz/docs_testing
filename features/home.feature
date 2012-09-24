@@ -14,8 +14,8 @@ Feature: User should be able to see all the documents, the ajax search feature, 
 		Given I am on "/home"
 		Then I should see "Documents for PTQS"
 		And I should see "New Document" pointing to "/docs/new"
-		And I should see these headings
-			| head 					|
+		And I should see the following
+			| entry 					|
 			| id 						|
 			| Doclink 			|
 			| Title 				|
@@ -25,4 +25,6 @@ Feature: User should be able to see all the documents, the ajax search feature, 
 			| German 				|
 			| Author 				|
 			| Actions 			|
-		And I should see "Search By Doclink Ref Number"
+		And I should see search for documents by Doclink Ref Number
+		And I should see "Edit"
+		And I should see "Delete"

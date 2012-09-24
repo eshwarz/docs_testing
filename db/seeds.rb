@@ -1,3 +1,5 @@
+require 'spreadsheet'
+
 # creating authentication types
 if AuthenticationType.count == 0
 	puts "Creating Types of Authentication"
@@ -22,7 +24,6 @@ if AdminUser.count == 0
 	AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password')
 end
 
-require 'spreadsheet'
 # Parsing documents spreadsheet and seeding it
 if Docs.count == 0
 	num = 20
@@ -33,6 +34,11 @@ if Docs.count == 0
 			doc = Docs.create( :doclink_ref_num => row[1], :parent => row[0], :condor_ref_num => row[2], :german_doc_num => row[3],  :title => row[5] )
 			doc.versions.create( :version_number => 1 )
 			puts "Record #{index} inserted"
+
+			if Rails.env.test? # this is for liming records for testing.
+				break if index == 8
+			end
+
 		end
 	end
 end
