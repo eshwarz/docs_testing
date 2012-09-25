@@ -20,6 +20,9 @@ module NavigationHelpers
     when /docs\/new/
       new_doc_path
 
+    when /docs/
+      docs_path
+
     when /reports/
       reports_path
 

@@ -19,11 +19,11 @@ Feature: User should be able to create a new document or edit the existing docum
 		And I fill in "Condor Ref Num" with "P12A34V56S"
 		And I fill in "German Doc Num" with "s8o2m5e8t7"
 		And I fill in "Author" with "Eshwar"
-		And I fill in "Chapter Name" with "Enablers"
-		And I fill in "Training Type" with "R&U"
+		And I select "Enablers" from "Chapter Name"
+		And I select "R&U" from "Training Type"
 		And I fill in "Comments" with "Some test comment goes here"
 		And I press "Save"
-		Then I should be on Documents page
+		Then I should be on "/docs"
 		And I should see the following
 			| entry 											|
 			| P12A34V56S									|
@@ -33,3 +33,5 @@ Feature: User should be able to create a new document or edit the existing docum
 			| P12A34V56S									|
 			| s8o2m5e8t7									|
 			| Eshwar											|
+		When I click "edit_doc_9"
+		
