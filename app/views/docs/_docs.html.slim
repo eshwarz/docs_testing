@@ -16,7 +16,7 @@
 					th width="80" Actions 
 
 			- @docs.each do |d| 
-				tr
+				tr id="doc_#{d.id}"
 					td= d.id
 					td= d.doclink_ref_num
 					td= d.title
@@ -26,7 +26,7 @@
 					td= d.german_doc_num
 					td= d.author
 					td
-						= link_to "Edit", edit_doc_path(d.id), :id => "edit_doc_#{d.id}"
+						= link_to "Edit", edit_doc_path(d.id), :id => "edit_doc_#{d.id}", :title => "Edit Document #{d.id}"
 						= " / " 
 						= link_to "Delete", doc_path(d.id), :method => "delete", :confirm => "Are you sure?", :id => "delete_doc_#{d.id}"
 

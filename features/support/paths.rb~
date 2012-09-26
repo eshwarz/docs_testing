@@ -26,13 +26,9 @@ module NavigationHelpers
     when /reports/
       reports_path
    
-    when /docs\/(.\d+)\/edit/
-      edit_doc_path(Docs.find($1))
-      
-    when /versions\/new/
-      new_version_path
-      
-     
+     when /docs/:id
+    docs_edit_path(:id) 
+#'/docs/:id/edit'
 
 
     # Add more mappings here.
