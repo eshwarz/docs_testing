@@ -25,6 +25,7 @@ module NavigationHelpers
 
     when /reports/
       reports_path
+<<<<<<< HEAD
    
     when /docs\/(.\d+)\/edit/
       edit_doc_path(Docs.find($1))
@@ -33,6 +34,10 @@ module NavigationHelpers
       new_version_path
       
      
+=======
+    when /timelines/
+       timelines_path
+>>>>>>> 6cfd7da6e002e36c1f621c3c8fb6b5e30200e8b5
 
 
     # Add more mappings here.
