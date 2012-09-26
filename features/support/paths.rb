@@ -25,6 +25,8 @@ module NavigationHelpers
 
     when /reports/
       reports_path
+    when /timelines/
+       timelines_path
 
 
     # Add more mappings here.

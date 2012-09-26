@@ -1,0 +1,30 @@
+		And I fill in "<id>" with "<date>"
+		| id 	| date 			|
+		|1 		| 2012-09-26	|
+		|2      |2012-09-27		|
+		|3      |2012-09-28		|
+		|4  	|2012-09-29		|
+		|5  	|2012-09-30		|
+		|6  	|2012-10-01		|
+		|7  	|2012-10-26		|
+		|8  	|2012-10-20		|
+		|9  	|2012-10-23		|
+		|10 	|2012-10-24		|
+
+
+	Scenario Outline:
+	  	Given I am on "/timelines"
+		When I selected link  "<link>"
+		And I fill in "<id>" with "<date>"
+		And I fill in "2" with "2012-09-27"
+        And I fill in "3" with "2012-09-28"
+		And I fill in "4" with "2012-09-29"
+		And I fill in "5" with "2012-09-30"
+		And I fill in "6" with "2012-10-01"
+		And I fill in "7" with "2012-10-02"
+		And I fill in "8" with "2012-10-03"
+		And I fill in "9" with "2012-10-04"
+		And I fill in "10" with "2012-10-05"
+		And I press "Save"
+		Then I should be on "/timelines"
+
