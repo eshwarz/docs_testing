@@ -10,6 +10,6 @@ div style="min-height: 500px;"
 				ul class="dropdown-menu"
 					- @group_numbers.each do |g|
 						li
-							= link_to 'Group Number "'+g+'"', reports_group_documents_path(:group_num => g), :remote => true
+							= link_to 'Group Number "'+g+'"', reports_group_documents_path(:group_num => g), :remote => true, :title => "Group Number #{g}"
 
 	#group_documents_results
