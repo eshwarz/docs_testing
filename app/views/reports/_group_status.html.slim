@@ -3,13 +3,13 @@ div style="min-height: 500px;"
 		ul class="nav nav-pills no_margin"
 			
 			li class="dropdown" id="menu2"
-				a.dropdown-toggle data-toggle="dropdown" href="#menu2"
+				a.dropdown-toggle data-toggle="dropdown" href="#menu2" id="menu2"
 					|Select Group Number
 					b class="caret mlm"
 
 				ul class="dropdown-menu"
 					- @group_numbers.each do |g|
 						li
-							= link_to 'Group Number "'+g+'"', reports_group_status_path(:group_num => g), :remote => true
+							= link_to 'Group Number "'+g+'"', reports_group_status_path(:group_num => g), :remote => true, :title => "Group Number #{g}"
 
 	#group_status_results
