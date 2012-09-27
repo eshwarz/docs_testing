@@ -25,19 +25,31 @@ module NavigationHelpers
 
     when /reports/
       reports_path
-<<<<<<< HEAD
+      
    
     when /docs\/(.\d+)\/edit/
       edit_doc_path(Docs.find($1))
       
     when /versions\/new/
       new_version_path
-      
-     
-=======
+
+
     when /timelines/
        timelines_path
->>>>>>> 6cfd7da6e002e36c1f621c3c8fb6b5e30200e8b5
+
+    when /versions\/(.\d+)\/edit/
+      edit_versions_path(Versions.find($1))
+
+    when  /versions/
+      versions_path
+
+    when /versions\/(.\d+)\/delete/
+      delete_versions_path(Versions.find($1))
+
+      
+      
+      
+ 
 
 
     # Add more mappings here.
