@@ -25,8 +25,15 @@ module NavigationHelpers
 
     when /reports/
       reports_path
+   
     when /timelines/
        timelines_path
+
+    when /docs\/(.\d+)\/edit/
+      edit_doc_path(Docs.find($1))
+
+    
+      
 
 
     # Add more mappings here.
