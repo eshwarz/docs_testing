@@ -1,4 +1,6 @@
 h1.tc Documents for PTQS
 div= link_to 'New Document', new_doc_path
+#div= link_to 'edit',edit_path
+
 .fr= render :partial => 'search_docs_form'
 = render :partial => 'docs'

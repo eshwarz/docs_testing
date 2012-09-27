@@ -16,7 +16,7 @@
 					th width="80" Actions 
 
 			- @docs.each do |d| 
-				tr
+				tr id="doc_#{d.id}"
 					td= d.id
 					td= d.doclink_ref_num
 					td= d.title
