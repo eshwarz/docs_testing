@@ -25,7 +25,7 @@ module NavigationHelpers
 
     when /reports/
       reports_path
-<<<<<<< HEAD
+      
    
 =======
 <<<<<<< HEAD
@@ -35,13 +35,31 @@ module NavigationHelpers
       
     when /versions\/new/
       new_version_path
+<<<<<<< HEAD
       
      
 =======
 >>>>>>> f75adea8d1ae76856a5a00d7234496199bd0c40a
+=======
+
+
+>>>>>>> b3673240f991d245eabaa05a0bec013495b0d858
     when /timelines/
        timelines_path
->>>>>>> 6cfd7da6e002e36c1f621c3c8fb6b5e30200e8b5
+
+    when /versions\/(.\d+)\/edit/
+      edit_versions_path(Versions.find($1))
+
+    when  /versions/
+      versions_path
+
+    when /versions\/(.\d+)\/delete/
+      delete_versions_path(Versions.find($1))
+
+      
+      
+      
+ 
 
     when /docs\/(.\d+)\/edit/
       edit_doc_path(Docs.find($1))

@@ -8,7 +8,7 @@ tr id="version_#{version.id}"
 	td= version.capa_number
 	td= version.revision_type
 	td
-		/ = link_to 'Edit', edit_version_path(version.id)+"?docs_id=#{doc.id}#docsModal", :remote => true, "data-toggle" => 'modal', :size => 'large'
-		= link_to 'Edit', edit_version_path( :id => version.id, :docs_id => doc.id )
+		/ = link_to 'Edit', edit_version_path(version.id)+"?docs_id=#{doc.id}#docsModal", :remote => true, "data-toggle" => 'modal', :size => 'large' 
+		= link_to 'Edit', edit_version_path( :id => version.id, :docs_id => doc.id ), :title => "Edit Version #{version.id}"
 		= " / "
-		= link_to 'Delete', version_path(version.id), :method => 'delete', :confirm => 'Are you sure?', :remote => true
+		= link_to 'Delete', version_path(version.id), :method => 'delete', :confirm => 'Are you sure?', :remote => true, :title => "Delete Version #{version.id}"
