@@ -34,4 +34,5 @@ Feature: User should be able to create a new document or edit the existing docum
 			| s8o2m5e8t7									|
 			| Eshwar											|
 		When I click "edit_doc_9"
+    Then I should go to edit documents page
 		
