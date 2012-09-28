@@ -3,9 +3,6 @@ Then /^I should see below content$/ do |table|
   step %{I should see "#{element[:content]}"}
  end
 end
-When /^I click on "(.*?)"$/ do |arg1|
-  click_on(arg1)
-end
 When /^I click on 'Group Number "(.*?)"'$/ do |arg2|
   click_link(arg2)
 end
@@ -22,4 +19,12 @@ Then /^I should see header for 'Group Status for "(.*?)"'$/ do |arg4|
       page.should have_content(arg4)
   end
  end
+end
+Then /^I should see search for documents by Search By Document Number$/ do
+  if page.has_css?('#search_bye_document_number')
+  page.should have_selector('#search_bye_document_number')
+ end
+end
+Then /^I should see header for "(.*?)"$/ do |arg5|
+  page.should have_content(arg5)
 end
