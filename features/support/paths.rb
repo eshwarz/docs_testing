@@ -24,16 +24,57 @@ module NavigationHelpers
       docs_path
 
     when /reports/
+<<<<<<< HEAD
       reports_path 
+=======
+      reports_path
+      
+   
+=======
+<<<<<<< HEAD
+>>>>>>> 344e6abf60da93957a6e0e9cb9cb258e947bd0d7
    
     when /docs\/(.\d+)\/edit/
       edit_doc_path(Docs.find($1))
       
     when /versions\/new/
       new_version_path
+<<<<<<< HEAD
       
+<<<<<<< HEAD
     when /timelines/
        timelines_path
+=======
+     
+=======
+>>>>>>> f75adea8d1ae76856a5a00d7234496199bd0c40a
+=======
+
+
+>>>>>>> b3673240f991d245eabaa05a0bec013495b0d858
+    when /timelines/
+       timelines_path
+
+    when /versions\/(.\d+)\/edit/
+      edit_versions_path(Versions.find($1))
+
+    when  /versions/
+      versions_path
+
+    when /versions\/(.\d+)\/delete/
+      delete_versions_path(Versions.find($1))
+
+      
+      
+      
+ 
+
+    when /docs\/(.\d+)\/edit/
+      edit_doc_path(Docs.find($1))
+
+    
+      
+>>>>>>> 344e6abf60da93957a6e0e9cb9cb258e947bd0d7
 
 
     # Add more mappings here.
