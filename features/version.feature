@@ -16,8 +16,25 @@ Feature: User should be able to see all the documents, the ajax search feature, 
 		Then I should see "SOP01333 : Network SOP - Biologics Network Tank Management Lifecycle"
 		Then I click on "Versions"
 		And I click on "New Version"
-		And I select "D" from "Group Num"
 		And I fill in "version_version_number" with "1"
+		When I select "Special" from "Group Num"
+   	Then I should see "Timelines"
+    And I should see the following
+		|Final draft to PQS BMT      |
+		|Tech review period          |
+		|Out for stakeholder review  |
+		|Stakeholder review ends     |
+		|Author adjudication complete|
+		|To PQS CT for OU review     |
+		|OU review complete          |
+		|OU review mtg               |
+		|Approval                    |
+		|Effective and LIA due       |
+		|Bio Ou comment 						 |
+		|Sm Ou Comment 							 |
+		|Cmo Ou comment 						 |
+		|Ptd Ou Comment 						 |
+		|Other Ou Comment 					 |
 		And I select "On hold" from "LIA Status"
 		And I fill in "version_comment" with "TEST COMMENT "
 		And I fill in "version_description_of_change" with "TEST CHANGED DESCRIPTION"
@@ -32,18 +49,23 @@ Feature: User should be able to see all the documents, the ajax search feature, 
 		And I choose "version_ptd_ou_true"
 		And I fill in "version_other_ou_comment" with "TEST COMMENT"
     And I choose "version_other_ou_true"
-		And I fill in "version_other_ou_comment" with "TEST COMMENT "
+		And I fill in "version_other_ou_comment" with "TEST COMMENT" 
 		And I press "Save"
-		Then I should see "SOP01333 : Network SOP - Biologics Network Tank Management Lifecycle"
-		And I click on "Versions"
-		Then I should see "Group Num"
+		Then I click on "Versions"
+		Then I should see the following
+		|1|
+		|On hold|
+		|TEST COMMENT|
+		|TEST CHANGED DESCRIPTION |
+		|1|
+		|New|
 		When I click on "Edit Version 1"
-		Then I should see "SOP01333 : Network SOP - Biologics Network Tank Management Lifecycle"
+		And I fill in "version_description_of_change" with "TEST CHANGED DESCRIPTIONS"
 		And I press "Save"
-		Then I am on "/versions"
-		When I click on "Delete Version 1"
+		And I click on "Delete Version 1"
 
 
-				
+
+
 
 

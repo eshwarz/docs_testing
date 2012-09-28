@@ -8,10 +8,9 @@ Then /^I click Edit inside "(.*?)"$/ do |row|
 	end
 end
 
-Then /^a flash message will be displayed$/ do
-  flash.should contain "Version created !"
-end
-
-#Then /^I should have "(.*?)"$/ do |notice|
- # flash[:notice]
+#Then /^a flash message will be displayed$/ do
+ # flash.should contain "Version created !"
 #end
+
+
+
