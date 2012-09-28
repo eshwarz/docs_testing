@@ -43,8 +43,11 @@ module NavigationHelpers
     when  /versions/
       versions_path
 
-    when /versions\/(.\d+)\/delete/
-      delete_versions_path(Versions.find($1))
+    when /versions\/(.\d+)/
+      version_path(Versions.find($1))
+
+    when  /requests/
+      requests_path
 
       
       
