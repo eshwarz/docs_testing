@@ -1,25 +1,29 @@
-div
-	.fl= will_paginate @versions
-	/ a class="btn btn-primary fr pagination_link" data-toggle="modal" href="#docsModal" id="new_version" doc-id="#{doc.id}" size="large" New Version
-	= link_to 'New Version', new_version_path( :docs_id => doc.id ), :class => 'btn btn-primary fr pagination_link'
+- if @versions.count == 0
+	h4 No Versions found!
+	= link_to 'Create New Version', new_version_path( :docs_id => doc.id ), :class => 'btn btn-primary'
 
-.clearfix
+- else
+	div
+		.fl= will_paginate @versions
+		/ a class="btn btn-primary fr pagination_link" data-toggle="modal" href="#docsModal" id="new_version" doc-id="#{doc.id}" size="large" New Version
+		= link_to 'New Version', new_version_path( :docs_id => doc.id ), :class => 'btn btn-primary fr pagination_link'
 
+	.clearfix
 
-table.table-striped.table-bordered.table-condensed width="100%"
-	thead
-		tr
-			th Group Num
-			th Version Num
-			th LIA Status
-			th Comment
-			th Description of Change
-			th CAPA Num
-			th Revision Type
-			/ th Links
-			th Actions
-	tbody#all_versions
-		- @versions.each do |version|
-			= render :partial => 'versions/version', :locals => { :version => version }
+	table.table-striped.table-bordered.table-condensed width="100%"
+		thead
+			tr
+				th Group Num
+				th Version Num
+				th LIA Status
+				th Comment
+				th Description of Change
+				th CAPA Num
+				th Revision Type
+				/ th Links
+				th Actions
+		tbody#all_versions
+			- @versions.each do |version|
+				= render :partial => 'versions/version', :locals => { :version => version }
 
-= will_paginate @versions
+	= will_paginate @versions

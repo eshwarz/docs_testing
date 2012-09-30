@@ -1,22 +1,27 @@
-div
-	.fl= will_paginate @mappings
-	a class="btn btn-primary fr pagination_link" data-toggle="modal" href="#docsModal" id="new_mapping" size="large" doc-id="#{doc.id}" New Mapping
-	.clearfix
+- if @mappings.count == 0
+	h4 No Mappings found!
+	a class="btn btn-primary" data-toggle="modal" href="#docsModal" id="new_mapping" size="large" doc-id="#{doc.id}" Create New Mapping
 
 
-table.table-striped.table-bordered.table-condensed width="100%"
-	thead
-		tr
-			th US CFRS
-			th Japan
-			th PIC/S
-			th EudraLex
-			th ISO
-			th ICH
-			th Actions
+- else
+	div
+		.fl= will_paginate @mappings
+		a class="btn btn-primary fr pagination_link" data-toggle="modal" href="#docsModal" id="new_mapping" size="large" doc-id="#{doc.id}" New Mapping
+		.clearfix
 
-	tbody#all_mappings
-		- @mappings.each do |mapping|
-			= render :partial => 'mappings/mapping', :locals => { :mapping => mapping }
+	table.table-striped.table-bordered.table-condensed width="100%"
+		thead
+			tr
+				th US CFRS
+				th Japan
+				th PIC/S
+				th EudraLex
+				th ISO
+				th ICH
+				th Actions
 
-= will_paginate @mappings
+		tbody#all_mappings
+			- @mappings.each do |mapping|
+				= render :partial => 'mappings/mapping', :locals => { :mapping => mapping }
+
+	= will_paginate @mappings

@@ -1,6 +1,7 @@
 div style="min-height: 500px;"
 	.form-search
-		= text_field 'search', 'document_versions', :placeholder => 'Search By Document Number',:title => 'Search By Document Number', 'data-provide' => 'typeahead', :class => 'filter_document_nums', :style => 'width: 151px;'
+		- search_field = text_field 'search', 'document_versions', :placeholder => 'Search By Document Number', :title => 'Search By Document Number', 'data-provide' => 'typeahead', :class => 'filter_document_nums', :style => 'width: 151px;'
+		= beautify_params 'Search By Document Number', search_field, 210, :key_style => 'line-height: 30px; font-weight: bold;'
 
 	#document_history_results
 
@@ -9,4 +10,8 @@ javascript:
 
 	$('.filter_document_nums').typeahead({
 		source: collection
+	})
+
+	$('.filter_document_nums').focus(function(){
+		$(this).select()
 	})
