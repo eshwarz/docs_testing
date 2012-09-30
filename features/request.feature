@@ -46,17 +46,17 @@ Feature: User should be able to create a new document or edit the existing docum
     And I click on "Convert to Version"
     And I click on "Version"
     Then I should see the following
-    | request        | 
-    | 2012-09-05     |
-    | sponsor        |
-    | 575            |
-    | just           |
-    | description    |
-    | sites          |
-    | team           |
-    | Commitment     |
-    |commitment detailscommitment details|
-    |commitment details|
+    | request           | 
+    | 2012-09-05        |
+    | sponsor           |
+    | 575               |
+    | just              |
+    | description       |
+    | sites             |
+    | team              |
+    | Commitment        |
+    |commitment         |
+    |commitment details |
    When I click on "Request"
    And I click on "New Request"
    And I click on "Cancel"
