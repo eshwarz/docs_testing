@@ -23,15 +23,50 @@ module NavigationHelpers
     when /docs/
       docs_path
 
+<<<<<<< HEAD
     when /reports/
       reports_path 
+=======
+<<<<<<< HEAD
+    when /reports/
 
+      reports_path 
+      reports_path
+
+     
+    
+
+
+=======
+    when /reports/ 
+      reports_path
+>>>>>>> 37fe993a02eee72066595dc9bc35c84630cb8ce2
+
+>>>>>>> 80936af0c343803eeef75291321c26445a776e57
     when /docs\/(.\d+)\/edit/
       edit_doc_path(Docs.find($1))
       
     when /versions\/new/
       new_version_path
+<<<<<<< HEAD
+=======
+      
+<<<<<<< HEAD
 
+    
+
+    when /timelines/
+       timelines_path
+>>>>>>> 37fe993a02eee72066595dc9bc35c84630cb8ce2
+
+
+
+
+=======
+    when /timelines/
+       timelines_path
+
+>>>>>>> 80936af0c343803eeef75291321c26445a776e57
     when /timelines/
        timelines_path
 
@@ -54,6 +89,14 @@ module NavigationHelpers
     
 
 
+<<<<<<< HEAD
+    
+      
+
+
+
+=======
+>>>>>>> 80936af0c343803eeef75291321c26445a776e57
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
