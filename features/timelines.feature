@@ -12,6 +12,7 @@ Feature: User should be able to see all the documents, the ajax search feature, 
 	@javascript
 	Scenario: 
 		Given I am on "/timelines"
+		#Group D
 		When I selected link  "D"
 		And I fill in "1" with "2012-09-26"
 		And I fill in "2" with "2012-09-27"
@@ -25,6 +26,8 @@ Feature: User should be able to see all the documents, the ajax search feature, 
 		And I fill in "10" with "2012-10-05"
 		And I press "Save"
 		Then I should be on "/timelines"
+
+		#Group E
 		When I go to "/timelines"
 		When I selected link  "E"
 		And I fill in "11" with "2012-11-31"
@@ -39,6 +42,8 @@ Feature: User should be able to see all the documents, the ajax search feature, 
 		And I fill in "20" with "2012-10-05"
 		And I press "Save"
 		Then I should be on "/timelines"
+
+		#Group F
 		When I go to "/timelines"
 		When I selected link  "F"
 		And I fill in "21" with "2012-11-31"
@@ -53,6 +58,8 @@ Feature: User should be able to see all the documents, the ajax search feature, 
 		And I fill in "30" with "2012-10-05"
 		And I press "Save"
 		Then I should be on "/timelines"
+
+		#Group G
 		When I go to "/timelines"
 		When I selected link  "G"
 		And I fill in "31" with "2012-11-31"
@@ -67,6 +74,8 @@ Feature: User should be able to see all the documents, the ajax search feature, 
 		And I fill in "40" with "2012-10-05"
 		And I press "Save"
 		Then I should be on "/timelines"
+
+		#Group H
 		When I go to "/timelines"
 		When I selected link  "H"
 		And I fill in "41" with "2012-11-31"

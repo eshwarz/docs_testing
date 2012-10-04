@@ -48,7 +48,7 @@ Feature: User should be able to create a new document or edit the existing docum
     And I press "Save"
 
     #Deliting  
-    When I click on "Delete"
+    When I click on "Delete Request 1"
     When I confirm Popup
     Then I should see "SOP01333 : Network SOP - Biologics Network Tank Management Lifecycle"
            
@@ -84,7 +84,7 @@ Feature: User should be able to create a new document or edit the existing docum
     | sponsor           |
     | New               |
     | 575               |
-    | just              |
+    | justification     |
     | description       |
     | sites             |
     | team              |

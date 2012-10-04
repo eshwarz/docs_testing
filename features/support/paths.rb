@@ -23,20 +23,14 @@ module NavigationHelpers
     when /docs/
       docs_path
 
-    when /reports/ 
-      reports_path
-
+    when /reports/
+     reports_path 
+       
     when /docs\/(.\d+)\/edit/
       edit_doc_path(Docs.find($1))
       
     when /versions\/new/
       new_version_path
-
-    when /timelines/
-       timelines_path
-
-    when /timelines/
-       timelines_path
 
     when /timelines/
        timelines_path
@@ -52,12 +46,12 @@ module NavigationHelpers
 
     when  /requests/
       requests_path
-      
+
     when /docs\/(.\d+)\/edit/
       edit_doc_path(Docs.find($1))
 
     
-      
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
