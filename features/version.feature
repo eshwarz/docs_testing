@@ -68,9 +68,7 @@ Feature: User should be able to see all the documents, the ajax search feature, 
 		When I click on "Versions"
 		Then I click on "Delete Version 1"
 		And I confirm popup
-		Then I click on "Versions"
-		When I click on "Edit Version 1"
-
+		
 	@javascript
 	Scenario:User selects "D" from Group Number
 		Given I am on "/home"

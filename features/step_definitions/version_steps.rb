@@ -15,9 +15,7 @@ end
 
 
 
-#Then /^a flash message will be displayed$/ do
- # flash.should contain "Version created !"
-#end
+
 
 
 
