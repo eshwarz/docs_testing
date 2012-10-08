@@ -8,9 +8,14 @@ Then /^I click Edit inside "(.*?)"$/ do |row|
 	end
 end
 
-#Then /^a flash message will be displayed$/ do
- # flash.should contain "Version created !"
-#end
+Then /^I confirm popup$/ do
+  page.driver.browser.switch_to.alert.accept
+end
+
+
+
+
+
 
 
 
