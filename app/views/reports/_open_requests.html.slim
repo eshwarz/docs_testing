@@ -1,4 +1,4 @@
-h3 Open Requests
+h1.pagination-centered Open Requests
 .mtm
 	- if @results.count > 0
 		= will_paginate @results, :remote => true
@@ -19,4 +19,4 @@ h3 Open Requests
 
 		= will_paginate @results, :remote => true
 	- else
-		h4 No Results found!
+		h2.pagination-centered  No Results found!

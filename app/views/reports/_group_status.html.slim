@@ -1,6 +1,7 @@
+h1.pagination-centered Group Status
 div style="min-height: 500px;"
-	.fl.fb.lh35.mrm Please select a group number from the drop down
-	.form-search.fl
+	h3.fl.fb.lh35.no_margin Please select a group number from the drop down
+	.mlm.form-search.fl
 		ul class="nav nav-pills no_margin"
 			
 			li class="dropdown" id="menu2"
@@ -14,3 +15,5 @@ div style="min-height: 500px;"
 							= link_to 'Group Number "'+g+'"', reports_group_status_path(:group_num => g), :remote => true, :title => "Group Number #{g}"
 
 	#group_status_results
+		.clear
+		h2.pagination-centered.pt100 Please select a group number from the dropdown

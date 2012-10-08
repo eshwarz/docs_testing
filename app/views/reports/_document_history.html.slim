@@ -1,9 +1,12 @@
+h1.pagination-centered Document History
 div style="min-height: 500px;"
-	.form-search
+	h3.form-search
 		- search_field = text_field 'search', 'document_versions', :placeholder => 'Search By Document Number', :title => 'Search By Document Number', 'data-provide' => 'typeahead', :class => 'filter_document_nums', :style => 'width: 151px;'
-		= beautify_params 'Search By Document Number', search_field, 210, :key_style => 'line-height: 30px; font-weight: bold;'
+		= beautify_params 'Search By Document Number', search_field, 300, :key_style => 'line-height: 30px; font-weight: bold;'
 
 	#document_history_results
+		.clear
+		h2.pagination-centered.pt100 Please type in the document number to get the history.
 
 javascript:
 	var collection = [#{@doclink_ref_nums.map { |d| "'" + d.to_s + "'" }.join(', ')}];

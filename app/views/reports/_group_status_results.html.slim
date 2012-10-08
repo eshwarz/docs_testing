@@ -2,7 +2,7 @@ h3.fr.no_margin Group Status for &quot;#{@group_num}&quot;
 .clearfix
 
 - if @results.count == 0
-	h4 No Results found!
+	h2.pt100.pagination-centered No Results found!
 - else
 	= will_paginate @results, :remote => true
 
