@@ -5,7 +5,7 @@ Feature: User should be able to see all the documents, the ajax search feature, 
 	Background: User logs in
 		Given I am not authenticated
 		When I log in as "<email>"
-			| email  									| password | last_name | first_name |
+			| email  					| password | last_name | first_name |
 			| test_user1@example.com	| password | Test      | User       |
 		And I go to "/home"
 
