@@ -24,7 +24,11 @@ module NavigationHelpers
       docs_path
 
     when /reports/
+<<<<<<< HEAD
      reports_path 
+=======
+     reports_path
+>>>>>>> 1bccb0253fd6e678897f44842b94cab029fc5b97
 
     when /docs\/(.\d+)\/edit/
       edit_doc_path(Docs.find($1))
