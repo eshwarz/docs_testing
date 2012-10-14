@@ -33,6 +33,47 @@ Feature: User should be able to create a new document or edit the existing docum
 			| P12A34V56S									|
 			| s8o2m5e8t7									|
 			| Eshwar											|
-		When I click "edit_doc_9"
-    Then I should go to edit documents page
 		
+		#Cancelling
+		When I go to "/docs/new"
+		And I click on "Cancel"
+		Then I should be on "/docs/new"
+		
+		#searching by doclink Ref Num	
+		When I fill in "search_documents" with "P12A34V56S"
+		Then I should see the following
+			| entry 											|
+			| P12A34V56S									|
+			| Head: Test document					|
+			| k3u6m2a8r9i2								|
+			| b4l7a9h											|
+			| P12A34V56S									|
+			| s8o2m5e8t7									|
+			| Eshwar		                  |
+		#not present doclink ref num
+		When I fill in "search_documents" with "p12A3465"
+		Then I should see "No results found!" 
+			
+		#Editing
+		Given I am on "/docs"
+    When I click on "Edit Document 1"
+    And I should see "SOP01333 : Network SOP - Biologics Network Tank Management Lifecycle"
+    And I fill in "Parent" with "1234FS"
+		And I fill in "Condor Ref Num" with "P235678"
+		And I fill in "German Doc Num" with "s8o2m"
+    And I fill in "Comments" with "Some values are edited here"
+		And I press "Save"
+		Then I should see the following
+			| entry 											|
+			| P12A34V56S									|
+			| Head: Test document					|
+			| k3u6m2a8r9i2								|
+			| 1234FS											|
+			| P235678											|
+			| s8o2m												|
+			| Eshwar		                  |
+
+		#delete
+		When I click on "delete_doc_1"
+    And I confirm Popup
+    Then I should be on "/docs"

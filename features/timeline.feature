@@ -6,7 +6,7 @@ Feature: User should be able to see all the documents, the ajax search feature, 
 		Given I am not authenticated
 		When I log in as "<email>"
 			| email  									| password | last_name | first_name |
-			| test_user2@example.com					| password | Test      | User       |
+			| test_user2@example.com	| password | Test      | User       |
 		And I go to "/timelines"
 	
 	@javascript
@@ -14,9 +14,9 @@ Feature: User should be able to see all the documents, the ajax search feature, 
 		Given I am on "/timelines"
 		#Group D
 		When I selected link  "D"
-		And I fill in "1" with "2012-09-26"
+		And I fill in "1" with "2012-09-25"
 		And I fill in "2" with "2012-09-27"
-        And I fill in "3" with "2012-09-28"
+    And I fill in "3" with "2012-09-28"
 		And I fill in "4" with "2012-09-29"
 		And I fill in "5" with "2012-09-30"
 		And I fill in "6" with "2012-10-01"

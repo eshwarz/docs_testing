@@ -24,6 +24,7 @@ class DocsController < ApplicationController
 			@doc = Docs.new params[:docs]
 			if @doc.save
 		  	redirect_to docs_path
+
 		  else
 		  	redirect_to new_doc_path
 			end
