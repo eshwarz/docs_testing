@@ -55,6 +55,10 @@ module NavigationHelpers
 
     when  /mappings/
       mappings_path
+      
+    when /users\/sign_in/
+      new_user_session_path
+
 
     
 

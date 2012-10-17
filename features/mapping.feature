@@ -24,7 +24,6 @@ Scenario: User should be able to see the documents
 	And I fill in "mapping_iso" with "isooo"
 	And I fill in "mapping_ich" with "ichhh"
 	And I press "Save"
-	
 	And I should see the following
 		|US CFRS|	
 		|Japan|	
@@ -33,9 +32,10 @@ Scenario: User should be able to see the documents
 		|ISO|	
 		|ICH|
 		|Actions|
-
-	And I click on "Edit Mapping 1"
-	#Then I should see "SOP01333 : Network SOP - Biologics Network Tank Management Lifecycle"
+	#When I am on "/docs/1/edit"
+	And I click on "Edit"
+	Then I should be on "/docs/1/edit"
+	
 	And I should see "Doclink ref num"
 	And I fill in "mapping_us_cfrs" with "mapping1"
 	And I fill in "mapping_japan" with "japan"

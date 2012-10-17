@@ -77,3 +77,5 @@ Feature: User should be able to create a new document or edit the existing docum
 		When I click on "delete_doc_1"
     And I confirm Popup
     Then I should be on "/docs"
+
+    
