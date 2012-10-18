@@ -14,7 +14,7 @@ Feature: Sign up
     @javascript
     Scenario: User signs up with invalid email
       When I sign up with an invalid email
-      Then I should see an invalid email message
+      Then I should be on "/users/sign_up"
 
     @javascript
     Scenario: User signs up without password

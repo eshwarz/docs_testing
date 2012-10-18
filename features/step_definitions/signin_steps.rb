@@ -1,8 +1,8 @@
 ### UTILITY METHODS ###
 
 def create_visitor
-  @visitor ||= { :name => "Testy McUserton", :email => "example@example.com",
-    :password => "please", :password_confirmation => "please" }
+  @visitor ||= { :name => "Fathima", :email => "fathimaid@gmail.com",
+    :password => "password", :password_confirmation => "password" }
 end
 
 def find_user
@@ -31,6 +31,7 @@ def sign_up
   delete_user
   visit '/users/sign_up'
   fill_in "user_first_name", :with => @visitor[:name]
+  fill_in "user_last_name", :with => @visitor[:name]
   fill_in "user_email", :with => @visitor[:email]
   fill_in "user_password", :with => @visitor[:password]
   fill_in "user_password_confirmation", :with => @visitor[:password_confirmation]
@@ -156,7 +157,7 @@ Then /^I should see a successful sign up message$/ do
 end
 
 Then /^I should see an invalid email message$/ do
-  page.should have_content "Email is invalid"
+  page.should have_content "please enter an email address"
 end
 
 Then /^I should see a missing password message$/ do

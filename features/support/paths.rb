@@ -59,6 +59,11 @@ module NavigationHelpers
     when /users\/sign_in/
       new_user_session_path
 
+      
+    when /users\/sign_up/
+      new_user_registration_path
+
+
 
     
 
