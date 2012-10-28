@@ -25,7 +25,7 @@ Then /^I should see header for 'Group Status for "(.*?)"'$/ do |header2|
 end
 
 Then /^I should see search for documents by Search By Document Number$/ do
-   if page.has_css?('#search_bye_document_number')
+   if page.has_css?('#search_by_document_number')
       page.should have_selector('#search_bye_document_number')
   end
 end
