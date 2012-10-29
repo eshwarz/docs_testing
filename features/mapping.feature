@@ -13,7 +13,7 @@ Scenario: User should be able to see the documents
 	Then I should see "Documents for PTQS"
 	When I click on "Edit Document 1"
 	Then I should see "SOP01333 : Network SOP - Biologics Network Tank Management Lifecycle"
-		And I click on "Mapping"
+	And I click on "Mapping"
 	And I click on "New Mapping"
 	Then I should see "SOP01333 : Network SOP - Biologics Network Tank Management Lifecycle"
 	And I should see "Doclink ref num"
@@ -21,26 +21,26 @@ Scenario: User should be able to see the documents
 	And I fill in "mapping_japan" with "japan"
 	And I fill in "mapping_pic_s" with "pics"
 	And I fill in "mapping_eudralex" with "eudralexxx"
-	And I fill in "mapping_iso" with "isooo"
-	And I fill in "mapping_ich" with "ichhh"
+	And I fill in "mapping_iso" with "ISO"
+	And I fill in "mapping_ich" with "ICH"
 	And I press "Save"
-	And I should see the following
-		|US CFRS|	
-		|Japan|	
-		|PIC/S	|
-		|EudraLex|	
-		|ISO|	
-		|ICH|
-		|Actions|
-	#When I am on "/docs/1/edit"
-	And I click on "Edit"
-	Then I should be on "/docs/1/edit"
+	Then I should see the following
+		| mapping1  |
+		| japan     |
+		| pics      |
+		| eudralexxx|
+		| ISO       |
+		| ICH       |
 	
-	And I should see "Doclink ref num"
+	#Editing
+	When I click on "Edit Mapping 1"	
+	Then I should see "SOP01333 : Network SOP - Biologics Network Tank Management Lifecycle"
 	And I fill in "mapping_us_cfrs" with "mapping1"
 	And I fill in "mapping_japan" with "japan"
 	And I press "Save"
-	#And I press "Delete"
-	#When I confirm Popup
-	#Then I should see "SOP01333 : Network SOP - Biologics Network Tank Management Lifecycle"
+	
+	#deleting
+	When I press "Delete"
+	And I confirm Popup
+	Then I should see "SOP01333 : Network SOP - Biologics Network Tank Management Lifecycle"
 
